@@ -74,8 +74,8 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_sbfhf")
 
-[node name="tower_small" type="Node3D" unique_id=2117794339]
+[node name="tower_small" type="Node3D" unique_id=786418595]
 
-[node name="Mesh" type="MeshInstance3D" parent="." unique_id=1468610816]
+[node name="Mesh" type="MeshInstance3D" parent="." unique_id=1202706673]
 material_override = SubResource("ShaderMaterial_366ol")
 mesh = SubResource("ArrayMesh_kbvj5")

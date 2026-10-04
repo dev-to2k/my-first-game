@@ -1,0 +1,18 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PROBE_MESH surfaces=1
+PROBE_MAT material_0 (res://assets/kit/house_m.glb::StandardMaterial3D_liepa):<StandardMaterial3D#-9223372010413881909>
+PROBE_AABB (-3.65, 0.0, -3.7) size=(7.3, 9.6, 7.4)
+PROBE_DONE
+[MCP Runtime] _ready() ENTERED — autoload instantiated successfully
+[MCP Runtime] Loaded and ready for IPC
+[MCP Runtime] IPC base dir: C:/Users/Administrator/AppData/Roaming/Godot/app_userdata/MyFirstGame/
+[MCP Runtime] Request path: C:/Users/Administrator/AppData/Roaming/Godot/app_userdata/MyFirstGame/mcp_runtime_request.json
+[MCP Runtime] Response path: C:/Users/Administrator/AppData/Roaming/Godot/app_userdata/MyFirstGame/mcp_runtime_response.json
+[MCP Runtime] Ready file: C:/Users/Administrator/AppData/Roaming/Godot/app_userdata/MyFirstGame/mcp_runtime_ready
+[MCP Runtime] Handshake file written successfully
+[MCP Runtime] _poll_ipc() — path: C:/Users/Administrator/AppData/Roaming/Godot/app_userdata/MyFirstGame/mcp_runtime_request.json, exists: false
+ERROR: 1 RID allocations of type 'N13RendererDummy15MaterialStorage13DummyMaterialE' were leaked at exit.
+ERROR: 1 RID allocations of type 'N13RendererDummy15MaterialStorage11DummyShaderE' were leaked at exit.
+ERROR: 2 RID allocations of type 'N13RendererDummy9DummyMeshE' were leaked at exit.
+ERROR: 1 RID allocations of type 'N17RendererSceneCull8InstanceE' were leaked at exit.

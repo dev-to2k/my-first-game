@@ -74,8 +74,8 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_tliqw")
 
-[node name="house_s" type="Node3D" unique_id=807054933]
+[node name="house_s" type="Node3D" unique_id=2137690220]
 
-[node name="Mesh" type="MeshInstance3D" parent="." unique_id=269878865]
+[node name="Mesh" type="MeshInstance3D" parent="." unique_id=1187849147]
 material_override = SubResource("ShaderMaterial_366ol")
 mesh = SubResource("ArrayMesh_yui7r")

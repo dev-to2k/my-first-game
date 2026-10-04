@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "godot": {
+      "command": "C:\\Program Files\\nodejs\\node.exe",
+      "args": [
+        "C:\\Users\\Administrator\\.gemini\\config\\run-godot-mcp.mjs"
+      ],
+      "env": {
+        "GODOT_PROJECT_DIR": "C:\\Users\\Administrator\\.gemini\\antigravity\\scratch\\my-first-game"
+      }
+    }
+  }
+}

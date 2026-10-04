@@ -1,222 +1,571 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://sao_city_wall_semicircular"]
 
-[ext_resource type="Shader" path="res://shaders/inverted_hull_outline.gdshader" id="1_5hvhr"]
-[ext_resource type="Shader" path="res://shaders/toon_cel_shading.gdshader" id="2_b6k4n"]
+[ext_resource type="Shader" path="res://shaders/inverted_hull_outline.gdshader" id="1_outline"]
+[ext_resource type="Shader" path="res://shaders/toon_cel_shading.gdshader" id="2_toon"]
+[ext_resource type="Shader" path="res://shaders/stylized_water.gdshader" id="3_water"]
+[ext_resource type="Texture2D" path="res://assets/textures/water_foam_noise.png" id="4_foam"]
+[ext_resource type="Texture2D" path="res://assets/textures/water_wave_normal_1.png" id="5_norm1"]
+[ext_resource type="Texture2D" path="res://assets/textures/water_wave_normal_2.png" id="6_norm2"]
+[ext_resource type="Shader" path="res://shaders/stylized_cobblestone.gdshader" id="7_cobble"]
+[ext_resource type="Texture2D" path="res://assets/textures/cobblestone_pattern.png" id="8_pat"]
+[ext_resource type="Texture2D" path="res://assets/textures/cobblestone_normal.png" id="9_cnorm"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_p40gw"]
+[sub_resource type="ShaderMaterial" id="SM_outline"]
 render_priority = 0
-shader = ExtResource("1_5hvhr")
+shader = ExtResource("1_outline")
 shader_parameter/outline_color = Color(0.12, 0.14, 0.18, 1)
-shader_parameter/outline_width = 2.0
+shader_parameter/outline_width = 1.8
 shader_parameter/min_distance_clamp = 0.5
-shader_parameter/max_distance_clamp = 120.0
+shader_parameter/max_distance_clamp = 140.0
 shader_parameter/enable_distance_fade = true
-shader_parameter/fade_start_distance = 60.0
-shader_parameter/fade_end_distance = 120.0
+shader_parameter/fade_start_distance = 80.0
+shader_parameter/fade_end_distance = 160.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_3p5wu"]
+[sub_resource type="ShaderMaterial" id="SM_stone_moss"]
 render_priority = 0
-next_pass = SubResource("ShaderMaterial_p40gw")
-shader = ExtResource("2_b6k4n")
-shader_parameter/albedo_color = Color(0.66, 0.63, 0.57, 1)
-shader_parameter/uv_scale = null
-shader_parameter/uv_offset = null
-shader_parameter/shadow_tint = Color(0.549, 0.6, 0.722, 1)
+next_pass = SubResource("SM_outline")
+shader = ExtResource("2_toon")
+shader_parameter/albedo_color = Color(0.60, 0.59, 0.54, 1)
+shader_parameter/shadow_tint = Color(0.48, 0.54, 0.65, 1)
 shader_parameter/shadow_threshold = 0.35
 shader_parameter/shadow_softness = 0.02
-shader_parameter/half_shadow_threshold = 0.6
+shader_parameter/half_shadow_threshold = 0.60
 shader_parameter/half_shadow_softness = 0.03
-shader_parameter/half_shadow_intensity = 0.5
-shader_parameter/use_toon_ramp_texture = null
+shader_parameter/half_shadow_intensity = 0.50
 shader_parameter/specular_size = 0.0
-shader_parameter/specular_softness = 0.015
-shader_parameter/specular_color = Color(1, 1, 1, 1)
-shader_parameter/roughness = 0.9
+shader_parameter/roughness = 0.88
 shader_parameter/enable_rim = true
 shader_parameter/rim_color = Color(0.95, 0.98, 1, 1)
-shader_parameter/rim_threshold = 0.5
+shader_parameter/rim_threshold = 0.50
 shader_parameter/rim_softness = 0.04
 shader_parameter/rim_spread = 2.0
-shader_parameter/normal_scale = null
 shader_parameter/use_vertex_color_ao = false
 
-[sub_resource type="BoxMesh" id="BoxMesh_sclpw"]
-material = SubResource("ShaderMaterial_3p5wu")
-size = Vector3(420, 20, 4)
+[sub_resource type="ShaderMaterial" id="SM_dark_trim"]
+render_priority = 0
+next_pass = SubResource("SM_outline")
+shader = ExtResource("2_toon")
+shader_parameter/albedo_color = Color(0.44, 0.43, 0.40, 1)
+shader_parameter/shadow_tint = Color(0.38, 0.42, 0.52, 1)
+shader_parameter/shadow_threshold = 0.35
+shader_parameter/shadow_softness = 0.02
+shader_parameter/roughness = 0.90
+shader_parameter/specular_size = 0.0
 
-[sub_resource type="BoxMesh" id="BoxMesh_qug37"]
-material = SubResource("ShaderMaterial_3p5wu")
-size = Vector3(420, 1.6, 4.8)
+[sub_resource type="ShaderMaterial" id="SM_roof_terracotta"]
+render_priority = 0
+next_pass = SubResource("SM_outline")
+shader = ExtResource("2_toon")
+shader_parameter/albedo_color = Color(0.722, 0.290, 0.161, 1)
+shader_parameter/shadow_tint = Color(0.45, 0.20, 0.15, 1)
+shader_parameter/shadow_threshold = 0.35
+shader_parameter/shadow_softness = 0.02
+shader_parameter/roughness = 0.65
+shader_parameter/specular_size = 0.03
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_1ubef"]
-material = SubResource("ShaderMaterial_3p5wu")
-top_radius = 4.5
-bottom_radius = 4.8
+[sub_resource type="ShaderMaterial" id="SM_moat_water"]
+render_priority = 0
+shader = ExtResource("3_water")
+shader_parameter/shallow_color = Color(0.20, 0.78, 0.82, 0.90)
+shader_parameter/deep_color = Color(0.06, 0.32, 0.56, 0.96)
+shader_parameter/depth_distance = 3.5
+shader_parameter/beer_law_attenuation = 1.2
+shader_parameter/foam_color = Color(0.96, 0.99, 1, 1)
+shader_parameter/shore_foam_threshold = 0.30
+shader_parameter/foam_softness = 0.06
+shader_parameter/foam_noise = ExtResource("4_foam")
+shader_parameter/foam_scroll_speed = Vector2(0.02, 0.015)
+shader_parameter/wave_normal_map_1 = ExtResource("5_norm1")
+shader_parameter/wave_normal_map_2 = ExtResource("6_norm2")
+shader_parameter/wave_speed_1 = Vector2(0.03, 0.015)
+shader_parameter/wave_speed_2 = Vector2(-0.02, 0.04)
+shader_parameter/wave_scale_1 = 3.5
+shader_parameter/wave_scale_2 = 7.0
+shader_parameter/normal_strength = 0.60
+shader_parameter/vertex_wave_height = 0.02
+shader_parameter/vertex_wave_frequency = 0.40
+shader_parameter/roughness = 0.05
+shader_parameter/specular_strength = 1.2
+
+[sub_resource type="ShaderMaterial" id="SM_bridge_cobble"]
+render_priority = 0
+shader = ExtResource("7_cobble")
+shader_parameter/stone_albedo = ExtResource("8_pat")
+shader_parameter/stone_normal = ExtResource("9_cnorm")
+shader_parameter/triplanar_scale = 0.32
+shader_parameter/triplanar_sharpness = 8.0
+shader_parameter/stone_tint = Color(0.85, 0.83, 0.80, 1)
+shader_parameter/grout_shadow_color = Color(0.38, 0.36, 0.40, 1)
+shader_parameter/normal_depth = 1.2
+shader_parameter/light_threshold = 0.40
+shader_parameter/light_softness = 0.03
+
+[sub_resource type="BoxMesh" id="BM_wall_seg"]
+material = SubResource("SM_stone_moss")
+size = Vector3(5, 18, 23)
+
+[sub_resource type="BoxMesh" id="BM_wall_cap"]
+material = SubResource("SM_dark_trim")
+size = Vector3(5.8, 1.6, 23)
+
+[sub_resource type="BoxMesh" id="BM_merlon"]
+material = SubResource("SM_dark_trim")
+size = Vector3(1.2, 1.4, 11)
+
+[sub_resource type="CylinderMesh" id="CM_bastion_body"]
+material = SubResource("SM_stone_moss")
+top_radius = 5.0
+bottom_radius = 5.4
 height = 24.0
 radial_segments = 16
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_dyk58"]
-render_priority = 0
-shader = ExtResource("1_5hvhr")
-shader_parameter/outline_color = Color(0.12, 0.14, 0.18, 1)
-shader_parameter/outline_width = 2.0
-shader_parameter/min_distance_clamp = 0.5
-shader_parameter/max_distance_clamp = 120.0
-shader_parameter/enable_distance_fade = true
-shader_parameter/fade_start_distance = 60.0
-shader_parameter/fade_end_distance = 120.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_p7x6y"]
-render_priority = 0
-next_pass = SubResource("ShaderMaterial_dyk58")
-shader = ExtResource("2_b6k4n")
-shader_parameter/albedo_color = Color(0.769, 0.416, 0.227, 1)
-shader_parameter/uv_scale = null
-shader_parameter/uv_offset = null
-shader_parameter/shadow_tint = Color(0.549, 0.6, 0.722, 1)
-shader_parameter/shadow_threshold = 0.35
-shader_parameter/shadow_softness = 0.02
-shader_parameter/half_shadow_threshold = 0.6
-shader_parameter/half_shadow_softness = 0.03
-shader_parameter/half_shadow_intensity = 0.5
-shader_parameter/use_toon_ramp_texture = null
-shader_parameter/specular_size = 0.05
-shader_parameter/specular_softness = 0.015
-shader_parameter/specular_color = Color(1, 1, 1, 1)
-shader_parameter/roughness = 0.8
-shader_parameter/enable_rim = true
-shader_parameter/rim_color = Color(0.95, 0.98, 1, 1)
-shader_parameter/rim_threshold = 0.5
-shader_parameter/rim_softness = 0.04
-shader_parameter/rim_spread = 2.0
-shader_parameter/normal_scale = null
-shader_parameter/use_vertex_color_ao = false
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_oesne"]
-material = SubResource("ShaderMaterial_p7x6y")
+[sub_resource type="CylinderMesh" id="CM_bastion_roof"]
+material = SubResource("SM_roof_terracotta")
 top_radius = 0.05
-bottom_radius = 5.0
-height = 5.0
+bottom_radius = 5.8
+height = 6.5
 radial_segments = 16
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_qegns"]
-material = SubResource("ShaderMaterial_3p5wu")
+[sub_resource type="PlaneMesh" id="PM_moat_water"]
+material = SubResource("SM_moat_water")
+size = Vector2(18, 25)
+
+[sub_resource type="BoxMesh" id="BM_moat_curb"]
+material = SubResource("SM_stone_moss")
+size = Vector3(1.4, 2.5, 25)
+
+[sub_resource type="CylinderMesh" id="CM_gate_tower_body"]
+material = SubResource("SM_stone_moss")
+top_radius = 5.4
+bottom_radius = 5.8
+height = 32.0
+radial_segments = 18
+
+[sub_resource type="CylinderMesh" id="CM_gate_tower_roof"]
+material = SubResource("SM_roof_terracotta")
+top_radius = 0.05
+bottom_radius = 6.2
+height = 8.0
+radial_segments = 18
+
+[sub_resource type="BoxMesh" id="BM_gate_lintel"]
+material = SubResource("SM_stone_moss")
+size = Vector3(18, 12, 6.5)
+
+[sub_resource type="BoxMesh" id="BM_gate_parapet"]
+material = SubResource("SM_dark_trim")
+size = Vector3(20, 1.8, 7.2)
+
+[sub_resource type="BoxMesh" id="BM_bridge_deck"]
+material = SubResource("SM_bridge_cobble")
+size = Vector3(16, 1.4, 30)
+
+[sub_resource type="BoxMesh" id="BM_bridge_parapet"]
+material = SubResource("SM_stone_moss")
+size = Vector3(1.2, 1.4, 30)
+
+[sub_resource type="CylinderMesh" id="CM_bridge_pier"]
+material = SubResource("SM_stone_moss")
 top_radius = 4.5
-bottom_radius = 4.8
-height = 24.0
+bottom_radius = 4.5
+height = 15.0
 radial_segments = 16
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_iuuvt"]
-render_priority = 0
-shader = ExtResource("1_5hvhr")
-shader_parameter/outline_color = Color(0.12, 0.14, 0.18, 1)
-shader_parameter/outline_width = 2.0
-shader_parameter/min_distance_clamp = 0.5
-shader_parameter/max_distance_clamp = 120.0
-shader_parameter/enable_distance_fade = true
-shader_parameter/fade_start_distance = 60.0
-shader_parameter/fade_end_distance = 120.0
+[node name="CityWall" type="Node3D"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_4121h"]
-render_priority = 0
-next_pass = SubResource("ShaderMaterial_iuuvt")
-shader = ExtResource("2_b6k4n")
-shader_parameter/albedo_color = Color(0.769, 0.416, 0.227, 1)
-shader_parameter/uv_scale = null
-shader_parameter/uv_offset = null
-shader_parameter/shadow_tint = Color(0.549, 0.6, 0.722, 1)
-shader_parameter/shadow_threshold = 0.35
-shader_parameter/shadow_softness = 0.02
-shader_parameter/half_shadow_threshold = 0.6
-shader_parameter/half_shadow_softness = 0.03
-shader_parameter/half_shadow_intensity = 0.5
-shader_parameter/use_toon_ramp_texture = null
-shader_parameter/specular_size = 0.05
-shader_parameter/specular_softness = 0.015
-shader_parameter/specular_color = Color(1, 1, 1, 1)
-shader_parameter/roughness = 0.8
-shader_parameter/enable_rim = true
-shader_parameter/rim_color = Color(0.95, 0.98, 1, 1)
-shader_parameter/rim_threshold = 0.5
-shader_parameter/rim_softness = 0.04
-shader_parameter/rim_spread = 2.0
-shader_parameter/normal_scale = null
-shader_parameter/use_vertex_color_ao = false
+<!-- Semi-Circular Wall Segments (R = 195m, center Z = 15m) -->
+<!-- Angle 0.20 to 2.94 rad (East to West across South) -->
+<!-- Left / East Flank -->
+[node name="Wall_0" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.254, 0, -0.967, 0, 1, 0, 0.967, 0, 0.254, 189.1, 9, 64.3)
+mesh = SubResource("BM_wall_seg")
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_76tl1"]
-material = SubResource("ShaderMaterial_4121h")
-top_radius = 0.05
-bottom_radius = 5.0
-height = 5.0
-radial_segments = 16
+[node name="Cap_0" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.254, 0, -0.967, 0, 1, 0, 0.967, 0, 0.254, 189.1, 18.8, 64.3)
+mesh = SubResource("BM_wall_cap")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_o25go"]
-render_priority = 0
-shader = ExtResource("1_5hvhr")
-shader_parameter/outline_color = Color(0.12, 0.14, 0.18, 1)
-shader_parameter/outline_width = 2.0
-shader_parameter/min_distance_clamp = 0.5
-shader_parameter/max_distance_clamp = 120.0
-shader_parameter/enable_distance_fade = true
-shader_parameter/fade_start_distance = 60.0
-shader_parameter/fade_end_distance = 120.0
+[node name="Wall_1" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.362, 0, -0.932, 0, 1, 0, 0.932, 0, 0.362, 182.2, 9, 85.8)
+mesh = SubResource("BM_wall_seg")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_mol5o"]
-render_priority = 0
-next_pass = SubResource("ShaderMaterial_o25go")
-shader = ExtResource("2_b6k4n")
-shader_parameter/albedo_color = Color(0.16, 0.17, 0.2, 1)
-shader_parameter/uv_scale = null
-shader_parameter/uv_offset = null
-shader_parameter/shadow_tint = Color(0.549, 0.6, 0.722, 1)
-shader_parameter/shadow_threshold = 0.35
-shader_parameter/shadow_softness = 0.02
-shader_parameter/half_shadow_threshold = 0.6
-shader_parameter/half_shadow_softness = 0.03
-shader_parameter/half_shadow_intensity = 0.5
-shader_parameter/use_toon_ramp_texture = null
-shader_parameter/specular_size = 0.05
-shader_parameter/specular_softness = 0.015
-shader_parameter/specular_color = Color(1, 1, 1, 1)
-shader_parameter/roughness = 0.7
-shader_parameter/enable_rim = true
-shader_parameter/rim_color = Color(0.95, 0.98, 1, 1)
-shader_parameter/rim_threshold = 0.5
-shader_parameter/rim_softness = 0.04
-shader_parameter/rim_spread = 2.0
-shader_parameter/normal_scale = null
-shader_parameter/use_vertex_color_ao = false
+[node name="Cap_1" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.362, 0, -0.932, 0, 1, 0, 0.932, 0, 0.362, 182.2, 18.8, 85.8)
+mesh = SubResource("BM_wall_cap")
 
-[sub_resource type="BoxMesh" id="BoxMesh_k4tlx"]
-material = SubResource("ShaderMaterial_mol5o")
-size = Vector3(10, 9, 0.8)
+[node name="Tower_1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 182.2, 12, 85.8)
+mesh = SubResource("CM_bastion_body")
 
-[node name="CityWall" type="Node3D" unique_id=568144569]
+[node name="Roof_1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 182.2, 27.25, 85.8)
+mesh = SubResource("CM_bastion_roof")
 
-[node name="@MeshInstance3D@34" type="MeshInstance3D" parent="." unique_id=1674787083]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
-mesh = SubResource("BoxMesh_sclpw")
+[node name="Wall_2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.466, 0, -0.885, 0, 1, 0, 0.885, 0, 0.466, 172.5, 9, 106.6)
+mesh = SubResource("BM_wall_seg")
 
-[node name="@MeshInstance3D@35" type="MeshInstance3D" parent="." unique_id=1099854893]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20.8, 0)
-mesh = SubResource("BoxMesh_qug37")
+[node name="Cap_2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.466, 0, -0.885, 0, 1, 0, 0.885, 0, 0.466, 172.5, 18.8, 106.6)
+mesh = SubResource("BM_wall_cap")
 
-[node name="@MeshInstance3D@36" type="MeshInstance3D" parent="." unique_id=1675734918]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 12, 0)
-mesh = SubResource("CylinderMesh_1ubef")
+[node name="Wall_3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.564, 0, -0.826, 0, 1, 0, 0.826, 0, 0.564, 160.1, 9, 126.5)
+mesh = SubResource("BM_wall_seg")
 
-[node name="@MeshInstance3D@37" type="MeshInstance3D" parent="." unique_id=1715099244]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 26.5, 0)
-mesh = SubResource("CylinderMesh_oesne")
+[node name="Cap_3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.564, 0, -0.826, 0, 1, 0, 0.826, 0, 0.564, 160.1, 18.8, 126.5)
+mesh = SubResource("BM_wall_cap")
 
-[node name="@MeshInstance3D@38" type="MeshInstance3D" parent="." unique_id=1578418695]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 12, 0)
-mesh = SubResource("CylinderMesh_qegns")
+[node name="Tower_3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 160.1, 12, 126.5)
+mesh = SubResource("CM_bastion_body")
 
-[node name="@MeshInstance3D@39" type="MeshInstance3D" parent="." unique_id=651523715]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28, 26.5, 0)
-mesh = SubResource("CylinderMesh_76tl1")
+[node name="Roof_3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 160.1, 27.25, 126.5)
+mesh = SubResource("CM_bastion_roof")
 
-[node name="@MeshInstance3D@40" type="MeshInstance3D" parent="." unique_id=157420524]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, 2.1)
-mesh = SubResource("BoxMesh_k4tlx")
+[node name="Wall_4" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.656, 0, -0.755, 0, 1, 0, 0.755, 0, 0.656, 145.2, 9, 145.1)
+mesh = SubResource("BM_wall_seg")
+
+[node name="Cap_4" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.656, 0, -0.755, 0, 1, 0, 0.755, 0, 0.656, 145.2, 18.8, 145.1)
+mesh = SubResource("BM_wall_cap")
+
+[node name="Wall_5" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.740, 0, -0.673, 0, 1, 0, 0.673, 0, 0.740, 128.0, 9, 162.2)
+mesh = SubResource("BM_wall_seg")
+
+[node name="Cap_5" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.740, 0, -0.673, 0, 1, 0, 0.673, 0, 0.740, 128.0, 18.8, 162.2)
+mesh = SubResource("BM_wall_cap")
+
+[node name="Tower_5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 128.0, 12, 162.2)
+mesh = SubResource("CM_bastion_body")
+
+[node name="Roof_5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 128.0, 27.25, 162.2)
+mesh = SubResource("CM_bastion_roof")
+
+[node name="Wall_6" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.814, 0, -0.581, 0, 1, 0, 0.581, 0, 0.814, 108.7, 9, 177.5)
+mesh = SubResource("BM_wall_seg")
+
+[node name="Cap_6" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.814, 0, -0.581, 0, 1, 0, 0.581, 0, 0.814, 108.7, 18.8, 177.5)
+mesh = SubResource("BM_wall_cap")
+
+[node name="Wall_7" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.878, 0, -0.479, 0, 1, 0, 0.479, 0, 0.878, 87.7, 9, 190.8)
+mesh = SubResource("BM_wall_seg")
+
+[node name="Cap_7" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.878, 0, -0.479, 0, 1, 0, 0.479, 0, 0.878, 87.7, 18.8, 190.8)
+mesh = SubResource("BM_wall_cap")
+
+[node name="Tower_7" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87.7, 12, 190.8)
+mesh = SubResource("CM_bastion_body")
+
+[node name="Roof_7" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 87.7, 27.25, 190.8)
+mesh = SubResource("CM_bastion_roof")
+
+[node name="Wall_8" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.930, 0, -0.368, 0, 1, 0, 0.368, 0, 0.930, 65.3, 9, 201.8)
+mesh = SubResource("BM_wall_seg")
+
+[node name="Cap_8" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.930, 0, -0.368, 0, 1, 0, 0.368, 0, 0.930, 65.3, 18.8, 201.8)
+mesh = SubResource("BM_wall_cap")
+
+[node name="Wall_9" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.969, 0, -0.247, 0, 1, 0, 0.247, 0, 0.969, 41.8, 9, 210.4)
+mesh = SubResource("BM_wall_seg")
+
+[node name="Cap_9" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.969, 0, -0.247, 0, 1, 0, 0.247, 0, 0.969, 41.8, 18.8, 210.4)
+mesh = SubResource("BM_wall_cap")
+
+[node name="Wall_10" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.993, 0, -0.118, 0, 1, 0, 0.118, 0, 0.993, 17.8, 9, 216.4)
+mesh = SubResource("BM_wall_seg")
+
+[node name="Cap_10" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.993, 0, -0.118, 0, 1, 0, 0.118, 0, 0.993, 17.8, 18.8, 216.4)
+mesh = SubResource("BM_wall_cap")
+
+<!-- Grand South Gatehouse flanking Central Avenue at X=0, Z=180 -->
+[node name="GateTower_L" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.5, 16, 180)
+mesh = SubResource("CM_gate_tower_body")
+
+[node name="GateRoof_L" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.5, 36, 180)
+mesh = SubResource("CM_gate_tower_roof")
+
+[node name="GateTower_R" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5, 16, 180)
+mesh = SubResource("CM_gate_tower_body")
+
+[node name="GateRoof_R" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5, 36, 180)
+mesh = SubResource("CM_gate_tower_roof")
+
+[node name="GateLintel" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 22, 180)
+mesh = SubResource("BM_gate_lintel")
+
+[node name="GateParapet" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 28.9, 180)
+mesh = SubResource("BM_gate_parapet")
+
+<!-- Right / West Flank -->
+[node name="Wall_11" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.993, 0, 0.118, 0, 1, 0, -0.118, 0, 0.993, -17.8, 9, 216.4)
+mesh = SubResource("BM_wall_seg")
+
+[node name="Cap_11" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.993, 0, 0.118, 0, 1, 0, -0.118, 0, 0.993, -17.8, 18.8, 216.4)
+mesh = SubResource("BM_wall_cap")
+
+[node name="Wall_12" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.969, 0, 0.247, 0, 1, 0, -0.247, 0, 0.969, -41.8, 9, 210.4)
+mesh = SubResource("BM_wall_seg")
+
+[node name="Cap_12" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.969, 0, 0.247, 0, 1, 0, -0.247, 0, 0.969, -41.8, 18.8, 210.4)
+mesh = SubResource("BM_wall_cap")
+
+[node name="Wall_13" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.930, 0, 0.368, 0, 1, 0, -0.368, 0, 0.930, -65.3, 9, 201.8)
+mesh = SubResource("BM_wall_seg")
+
+[node name="Cap_13" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.930, 0, 0.368, 0, 1, 0, -0.368, 0, 0.930, -65.3, 18.8, 201.8)
+mesh = SubResource("BM_wall_cap")
+
+[node name="Tower_13" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -65.3, 12, 201.8)
+mesh = SubResource("CM_bastion_body")
+
+[node name="Roof_13" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -65.3, 27.25, 201.8)
+mesh = SubResource("CM_bastion_roof")
+
+[node name="Wall_14" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.878, 0, 0.479, 0, 1, 0, -0.479, 0, 0.878, -87.7, 9, 190.8)
+mesh = SubResource("BM_wall_seg")
+
+[node name="Cap_14" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.878, 0, 0.479, 0, 1, 0, -0.479, 0, 0.878, -87.7, 18.8, 190.8)
+mesh = SubResource("BM_wall_cap")
+
+[node name="Wall_15" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.814, 0, 0.581, 0, 1, 0, -0.581, 0, 0.814, -108.7, 9, 177.5)
+mesh = SubResource("BM_wall_seg")
+
+[node name="Cap_15" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.814, 0, 0.581, 0, 1, 0, -0.581, 0, 0.814, -108.7, 18.8, 177.5)
+mesh = SubResource("BM_wall_cap")
+
+[node name="Tower_15" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -108.7, 12, 177.5)
+mesh = SubResource("CM_bastion_body")
+
+[node name="Roof_15" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -108.7, 27.25, 177.5)
+mesh = SubResource("CM_bastion_roof")
+
+[node name="Wall_16" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.740, 0, 0.673, 0, 1, 0, -0.673, 0, 0.740, -128.0, 9, 162.2)
+mesh = SubResource("BM_wall_seg")
+
+[node name="Cap_16" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.740, 0, 0.673, 0, 1, 0, -0.673, 0, 0.740, -128.0, 18.8, 162.2)
+mesh = SubResource("BM_wall_cap")
+
+[node name="Wall_17" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.656, 0, 0.755, 0, 1, 0, -0.755, 0, 0.656, -145.2, 9, 145.1)
+mesh = SubResource("BM_wall_seg")
+
+[node name="Cap_17" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.656, 0, 0.755, 0, 1, 0, -0.755, 0, 0.656, -145.2, 18.8, 145.1)
+mesh = SubResource("BM_wall_cap")
+
+[node name="Tower_17" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -145.2, 12, 145.1)
+mesh = SubResource("CM_bastion_body")
+
+[node name="Roof_17" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -145.2, 27.25, 145.1)
+mesh = SubResource("CM_bastion_roof")
+
+[node name="Wall_18" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.564, 0, 0.826, 0, 1, 0, -0.826, 0, 0.564, -160.1, 9, 126.5)
+mesh = SubResource("BM_wall_seg")
+
+[node name="Cap_18" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.564, 0, 0.826, 0, 1, 0, -0.826, 0, 0.564, -160.1, 18.8, 126.5)
+mesh = SubResource("BM_wall_cap")
+
+[node name="Wall_19" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.466, 0, 0.885, 0, 1, 0, -0.885, 0, 0.466, -172.5, 9, 106.6)
+mesh = SubResource("BM_wall_seg")
+
+[node name="Cap_19" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.466, 0, 0.885, 0, 1, 0, -0.885, 0, 0.466, -172.5, 18.8, 106.6)
+mesh = SubResource("BM_wall_cap")
+
+[node name="Tower_19" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -172.5, 12, 106.6)
+mesh = SubResource("CM_bastion_body")
+
+[node name="Roof_19" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -172.5, 27.25, 106.6)
+mesh = SubResource("CM_bastion_roof")
+
+[node name="Wall_20" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.362, 0, 0.932, 0, 1, 0, -0.932, 0, 0.362, -182.2, 9, 85.8)
+mesh = SubResource("BM_wall_seg")
+
+[node name="Cap_20" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.362, 0, 0.932, 0, 1, 0, -0.932, 0, 0.362, -182.2, 18.8, 85.8)
+mesh = SubResource("BM_wall_cap")
+
+[node name="Wall_21" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.254, 0, 0.967, 0, 1, 0, -0.967, 0, 0.254, -189.1, 9, 64.3)
+mesh = SubResource("BM_wall_seg")
+
+[node name="Cap_21" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.254, 0, 0.967, 0, 1, 0, -0.967, 0, 0.254, -189.1, 18.8, 64.3)
+mesh = SubResource("BM_wall_cap")
+
+<!-- Semi-Circular Turquoise Water Moat (R = 207m, width 18m) -->
+[node name="Moat_0" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.254, 0, -0.967, 0, 1, 0, 0.967, 0, 0.254, 200.7, -0.4, 67.4)
+mesh = SubResource("PM_moat_water")
+
+[node name="MoatCurb_0" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.254, 0, -0.967, 0, 1, 0, 0.967, 0, 0.254, 209.4, -0.2, 69.7)
+mesh = SubResource("BM_moat_curb")
+
+[node name="Moat_1" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.362, 0, -0.932, 0, 1, 0, 0.932, 0, 0.362, 193.4, -0.4, 90.2)
+mesh = SubResource("PM_moat_water")
+
+[node name="MoatCurb_1" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.362, 0, -0.932, 0, 1, 0, 0.932, 0, 0.362, 201.8, -0.2, 93.5)
+mesh = SubResource("BM_moat_curb")
+
+[node name="Moat_2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.564, 0, -0.826, 0, 1, 0, 0.826, 0, 0.564, 169.9, -0.4, 133.5)
+mesh = SubResource("PM_moat_water")
+
+[node name="MoatCurb_2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.564, 0, -0.826, 0, 1, 0, 0.826, 0, 0.564, 177.3, -0.2, 138.6)
+mesh = SubResource("BM_moat_curb")
+
+[node name="Moat_3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.740, 0, -0.673, 0, 1, 0, 0.673, 0, 0.740, 135.9, -0.4, 171.4)
+mesh = SubResource("PM_moat_water")
+
+[node name="MoatCurb_3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.740, 0, -0.673, 0, 1, 0, 0.673, 0, 0.740, 142.6, -0.2, 177.5)
+mesh = SubResource("BM_moat_curb")
+
+[node name="Moat_4" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.878, 0, -0.479, 0, 1, 0, 0.479, 0, 0.878, 93.1, -0.4, 201.7)
+mesh = SubResource("PM_moat_water")
+
+[node name="MoatCurb_4" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.878, 0, -0.479, 0, 1, 0, 0.479, 0, 0.878, 97.4, -0.2, 209.6)
+mesh = SubResource("BM_moat_curb")
+
+[node name="Moat_5" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.969, 0, -0.247, 0, 1, 0, 0.247, 0, 0.969, 44.4, -0.4, 222.6)
+mesh = SubResource("PM_moat_water")
+
+[node name="MoatCurb_5" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.969, 0, -0.247, 0, 1, 0, 0.247, 0, 0.969, 46.6, -0.2, 231.3)
+mesh = SubResource("BM_moat_curb")
+
+<!-- Left side of gate water -->
+[node name="Moat_6L" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.0, -0.4, 222.0)
+mesh = SubResource("PM_moat_water")
+
+[node name="Moat_6R" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.0, -0.4, 222.0)
+mesh = SubResource("PM_moat_water")
+
+<!-- West Moat Segments -->
+[node name="Moat_7" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.969, 0, 0.247, 0, 1, 0, -0.247, 0, 0.969, -44.4, -0.4, 222.6)
+mesh = SubResource("PM_moat_water")
+
+[node name="MoatCurb_7" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.969, 0, 0.247, 0, 1, 0, -0.247, 0, 0.969, -46.6, -0.2, 231.3)
+mesh = SubResource("BM_moat_curb")
+
+[node name="Moat_8" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.878, 0, 0.479, 0, 1, 0, -0.479, 0, 0.878, -93.1, -0.4, 201.7)
+mesh = SubResource("PM_moat_water")
+
+[node name="MoatCurb_8" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.878, 0, 0.479, 0, 1, 0, -0.479, 0, 0.878, -97.4, -0.2, 209.6)
+mesh = SubResource("BM_moat_curb")
+
+[node name="Moat_9" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.740, 0, 0.673, 0, 1, 0, -0.673, 0, 0.740, -135.9, -0.4, 171.4)
+mesh = SubResource("PM_moat_water")
+
+[node name="MoatCurb_9" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.740, 0, 0.673, 0, 1, 0, -0.673, 0, 0.740, -142.6, -0.2, 177.5)
+mesh = SubResource("BM_moat_curb")
+
+[node name="Moat_10" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.564, 0, 0.826, 0, 1, 0, -0.826, 0, 0.564, -169.9, -0.4, 133.5)
+mesh = SubResource("PM_moat_water")
+
+[node name="MoatCurb_10" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.564, 0, 0.826, 0, 1, 0, -0.826, 0, 0.564, -177.3, -0.2, 138.6)
+mesh = SubResource("BM_moat_curb")
+
+[node name="Moat_11" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.362, 0, 0.932, 0, 1, 0, -0.932, 0, 0.362, -193.4, -0.4, 90.2)
+mesh = SubResource("PM_moat_water")
+
+[node name="MoatCurb_11" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.362, 0, 0.932, 0, 1, 0, -0.932, 0, 0.362, -201.8, -0.2, 93.5)
+mesh = SubResource("BM_moat_curb")
+
+[node name="Moat_12" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.254, 0, 0.967, 0, 1, 0, -0.967, 0, 0.254, -200.7, -0.4, 67.4)
+mesh = SubResource("PM_moat_water")
+
+[node name="MoatCurb_12" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.254, 0, 0.967, 0, 1, 0, -0.967, 0, 0.254, -209.4, -0.2, 69.7)
+mesh = SubResource("BM_moat_curb")
+
+<!-- Grand Arched Stone Moat Bridge (spanning 28m across moat in front of gate) -->
+[node name="BridgeDeck" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 195)
+mesh = SubResource("BM_bridge_deck")
+
+[node name="BridgeParapet_L" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.2, 1.4, 195)
+mesh = SubResource("BM_bridge_parapet")
+
+[node name="BridgeParapet_R" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.2, 1.4, 195)
+mesh = SubResource("BM_bridge_parapet")
+
+[node name="BridgePier_1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -2, 190)
+mesh = SubResource("CM_bridge_pier")
+
+[node name="BridgePier_2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -2, 200)
+mesh = SubResource("CM_bridge_pier")

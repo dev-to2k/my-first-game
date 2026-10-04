@@ -1,0 +1,38 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+VERIFY_MMI_NODES: 7 INSTANCES: 1454
+VERIFY_CAM pos=(0.0, 55.0, 230.0) rot=(-0.24, 0.0, 0.0) fov=50.0
+VERIFY_SUN rot=(-0.802851, 2.408554, 0.0) energy=1.20000004768372
+VERIFY_ENV fog=true density=0.0010000000475 aerial=0.86000001430511 glow=true tonemap=2
+VERIFY_PART res://scenes/parts/church.tscn ok=true
+VERIFY_PART res://scenes/parts/lake_park.tscn ok=true
+VERIFY_PART res://scenes/parts/city_wall.tscn ok=true
+VERIFY_PART res://scenes/parts/floor2_ceiling.tscn ok=true
+VERIFY_PART res://scenes/parts/perimeter_landscape.tscn ok=true
+VERIFY_PART res://scenes/parts/anime_clouds.tscn ok=true
+VERIFY_PART res://scenes/parts/labyrinth_tower.tscn ok=true
+VERIFY_PART res://scenes/parts/black_iron_palace.tscn ok=true
+VERIFY_PART res://scenes/parts/windmill_ridge.tscn ok=true
+VERIFY_PART res://scenes/parts/teleport_plaza.tscn ok=true
+VERIFY_PART res://scenes/parts/market_street.tscn ok=true
+VERIFY_KIT house_s ok=true
+VERIFY_KIT house_m ok=true
+VERIFY_KIT house_l ok=true
+VERIFY_KIT corner ok=true
+VERIFY_KIT tower_small ok=true
+VERIFY_KIT tree_oak ok=true
+VERIFY_KIT tree_small ok=true
+VERIFY_DONE
+[MCP Runtime] _ready() ENTERED — autoload instantiated successfully
+[MCP Runtime] Loaded and ready for IPC
+[MCP Runtime] IPC base dir: C:/Users/Administrator/AppData/Roaming/Godot/app_userdata/MyFirstGame/
+[MCP Runtime] Request path: C:/Users/Administrator/AppData/Roaming/Godot/app_userdata/MyFirstGame/mcp_runtime_request.json
+[MCP Runtime] Response path: C:/Users/Administrator/AppData/Roaming/Godot/app_userdata/MyFirstGame/mcp_runtime_response.json
+[MCP Runtime] Ready file: C:/Users/Administrator/AppData/Roaming/Godot/app_userdata/MyFirstGame/mcp_runtime_ready
+[MCP Runtime] Handshake file written successfully
+[MCP Runtime] _poll_ipc() — path: C:/Users/Administrator/AppData/Roaming/Godot/app_userdata/MyFirstGame/mcp_runtime_request.json, exists: false
+ERROR: 150 RID allocations of type 'N13RendererDummy15MaterialStorage13DummyMaterialE' were leaked at exit.
+ERROR: 5 RID allocations of type 'N13RendererDummy15MaterialStorage11DummyShaderE' were leaked at exit.
+ERROR: 964 RID allocations of type 'N13RendererDummy9DummyMeshE' were leaked at exit.
+ERROR: 5 RID allocations of type 'PN13RendererDummy14TextureStorage12DummyTextureE' were leaked at exit.
+ERROR: 981 RID allocations of type 'N17RendererSceneCull8InstanceE' were leaked at exit.

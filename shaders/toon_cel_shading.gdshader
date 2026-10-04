@@ -38,20 +38,49 @@ group_uniforms AmbientAndDetails;
 uniform sampler2D normal_map : hint_normal, filter_linear_mipmap;
 uniform float normal_scale : hint_range(0.0, 2.0, 0.05) = 1.0;
 uniform bool use_vertex_color_ao = true;
+group_uniforms ArchitectureColors;
+uniform bool use_architectural_colors = false;
+uniform vec4 wall_color : source_color = vec4(0.886, 0.867, 0.835, 1.0);     // #E2DDD5 Classic ivory/limestone wall
+uniform vec4 roof_color_top : source_color = vec4(0.722, 0.290, 0.161, 1.0); // #B84A29 Terracotta orange-red ridge
+uniform vec4 roof_color_edge : source_color = vec4(0.580, 0.220, 0.120, 1.0);// Terracotta eaves shadow
+uniform vec4 roof_slate_color : source_color = vec4(0.35, 0.42, 0.50, 1.0);  // Slate stone gray variant
+uniform float roof_slope_threshold : hint_range(0.0, 1.0, 0.05) = 0.25;
+uniform float roof_gradient_scale : hint_range(0.5, 20.0, 0.5) = 4.0;
 
 varying float v_cam_dist;
+varying vec3 v_local_pos;
 
 void vertex() {
 	UV = UV * uv_scale + uv_offset;
+	v_local_pos = VERTEX;
 	v_cam_dist = length((MODELVIEW_MATRIX * vec4(VERTEX, 1.0)).xyz);
 }
 
 void fragment() {
 	vec4 tex_albedo = texture(albedo_texture, UV);
-	vec3 base_color = albedo_color.rgb * tex_albedo.rgb;
+	vec3 base_color;
 	
-	if (use_vertex_color_ao) {
-		base_color *= COLOR.rgb;
+	if (use_architectural_colors) {
+		// Identify roof vs wall by normal slope (sloped/upward faces are roofs)
+		float slope = clamp(NORMAL.y, 0.0, 1.0);
+		float is_roof = smoothstep(roof_slope_threshold - 0.05, roof_slope_threshold + 0.05, slope);
+		
+		// Subtle gradient from ridge to eaves along local height
+		float roof_grad = clamp(fract(v_local_pos.y / roof_gradient_scale), 0.0, 1.0);
+		vec3 terracotta_roof = mix(roof_color_edge.rgb, roof_color_top.rgb, roof_grad);
+		
+		// Variant: support slate roof if instance color blue channel exceeds red
+		vec3 selected_roof = terracotta_roof;
+		if (use_vertex_color_ao && COLOR.b > COLOR.r * 1.05) {
+			selected_roof = mix(roof_slate_color.rgb * 0.85, roof_slate_color.rgb * 1.15, roof_grad);
+		}
+		
+		base_color = mix(wall_color.rgb, selected_roof, is_roof) * tex_albedo.rgb;
+	} else {
+		base_color = albedo_color.rgb * tex_albedo.rgb;
+		if (use_vertex_color_ao) {
+			base_color *= COLOR.rgb;
+		}
 	}
 	
 	ALBEDO = base_color;

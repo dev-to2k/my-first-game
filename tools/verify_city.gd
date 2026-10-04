@@ -27,7 +27,20 @@ func _init() -> void:
 	var we: WorldEnvironment = root.get_node("WorldEnvironment")
 	var e: Environment = we.environment
 	lines.append("VERIFY_ENV fog=%s density=%s aerial=%s glow=%s tonemap=%s" % [str(e.fog_enabled), str(e.fog_density), str(e.fog_aerial_perspective), str(e.glow_enabled), str(e.tonemap_mode)])
-	for p in ["res://scenes/parts/church.tscn", "res://scenes/parts/lake_park.tscn", "res://scenes/parts/city_wall.tscn", "res://scenes/parts/floor2_ceiling.tscn", "res://scenes/parts/perimeter_landscape.tscn", "res://scenes/parts/anime_clouds.tscn"]:
+	var part_paths := [
+		"res://scenes/parts/church.tscn",
+		"res://scenes/parts/lake_park.tscn",
+		"res://scenes/parts/city_wall.tscn",
+		"res://scenes/parts/floor2_ceiling.tscn",
+		"res://scenes/parts/perimeter_landscape.tscn",
+		"res://scenes/parts/anime_clouds.tscn",
+		"res://scenes/parts/labyrinth_tower.tscn",
+		"res://scenes/parts/black_iron_palace.tscn",
+		"res://scenes/parts/windmill_ridge.tscn",
+		"res://scenes/parts/teleport_plaza.tscn",
+		"res://scenes/parts/market_street.tscn"
+	]
+	for p in part_paths:
 		lines.append("VERIFY_PART %s ok=%s" % [p, str(load(p) != null)])
 	for k in ["house_s", "house_m", "house_l", "corner", "tower_small", "tree_oak", "tree_small"]:
 		lines.append("VERIFY_KIT %s ok=%s" % [k, str(load("res://assets/city_kit/%s.tscn" % k) != null)])
@@ -35,7 +48,8 @@ func _init() -> void:
 	
 	var out_str := "\n".join(lines)
 	print(out_str)
-	var f := FileAccess.open("res://verify_results.txt", FileAccess.WRITE)
+	var out_path := ProjectSettings.globalize_path("res://verify_results.txt")
+	var f := FileAccess.open(out_path, FileAccess.WRITE)
 	if f != null:
 		f.store_string(out_str)
 		f.close()

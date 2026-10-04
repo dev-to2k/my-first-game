@@ -42,7 +42,7 @@ shader_parameter/use_vertex_color_ao = false
 
 [sub_resource type="BoxMesh" id="BoxMesh_aqpog"]
 material = SubResource("ShaderMaterial_b5cqe")
-size = Vector3(26, 10, 16)
+size = Vector3(26, 11, 16)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b6cfa"]
 render_priority = 0
@@ -147,19 +147,12 @@ radial_segments = 12
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_exptb"]
 material = SubResource("ShaderMaterial_b5cqe")
-top_radius = 1.1
-bottom_radius = 1.4
-height = 70.0
+top_radius = 2.2
+bottom_radius = 2.5
+height = 20.0
 radial_segments = 12
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_yixsl"]
-material = SubResource("ShaderMaterial_145qg")
-top_radius = 0.05
-bottom_radius = 1.3
-height = 5.0
-radial_segments = 12
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_xyvm1"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yixsl"]
 render_priority = 0
 shader = ExtResource("1_vv0dy")
 shader_parameter/outline_color = Color(0.12, 0.14, 0.18, 1)
@@ -170,9 +163,67 @@ shader_parameter/enable_distance_fade = true
 shader_parameter/fade_start_distance = 60.0
 shader_parameter/fade_end_distance = 120.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_xql0m"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xyvm1"]
 render_priority = 0
-next_pass = SubResource("ShaderMaterial_xyvm1")
+next_pass = SubResource("ShaderMaterial_yixsl")
+shader = ExtResource("2_82yic")
+shader_parameter/albedo_color = Color(0.769, 0.416, 0.227, 1)
+shader_parameter/uv_scale = null
+shader_parameter/uv_offset = null
+shader_parameter/shadow_tint = Color(0.549, 0.6, 0.722, 1)
+shader_parameter/shadow_threshold = 0.35
+shader_parameter/shadow_softness = 0.02
+shader_parameter/half_shadow_threshold = 0.6
+shader_parameter/half_shadow_softness = 0.03
+shader_parameter/half_shadow_intensity = 0.5
+shader_parameter/use_toon_ramp_texture = null
+shader_parameter/specular_size = 0.05
+shader_parameter/specular_softness = 0.015
+shader_parameter/specular_color = Color(1, 1, 1, 1)
+shader_parameter/roughness = 0.8
+shader_parameter/enable_rim = true
+shader_parameter/rim_color = Color(0.95, 0.98, 1, 1)
+shader_parameter/rim_threshold = 0.5
+shader_parameter/rim_softness = 0.04
+shader_parameter/rim_spread = 2.0
+shader_parameter/normal_scale = null
+shader_parameter/use_vertex_color_ao = false
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_xql0m"]
+material = SubResource("ShaderMaterial_xyvm1")
+top_radius = 0.05
+bottom_radius = 2.6
+height = 6.5
+radial_segments = 12
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_0pm4x"]
+material = SubResource("ShaderMaterial_b5cqe")
+top_radius = 2.2
+bottom_radius = 2.5
+height = 20.0
+radial_segments = 12
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_60fr5"]
+material = SubResource("ShaderMaterial_xyvm1")
+top_radius = 0.05
+bottom_radius = 2.6
+height = 6.5
+radial_segments = 12
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xcqnt"]
+render_priority = 0
+shader = ExtResource("1_vv0dy")
+shader_parameter/outline_color = Color(0.12, 0.14, 0.18, 1)
+shader_parameter/outline_width = 2.0
+shader_parameter/min_distance_clamp = 0.5
+shader_parameter/max_distance_clamp = 120.0
+shader_parameter/enable_distance_fade = true
+shader_parameter/fade_start_distance = 60.0
+shader_parameter/fade_end_distance = 120.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_23y70"]
+render_priority = 0
+next_pass = SubResource("ShaderMaterial_xcqnt")
 shader = ExtResource("2_82yic")
 shader_parameter/albedo_color = Color(0.16, 0.17, 0.2, 1)
 shader_parameter/uv_scale = null
@@ -196,60 +247,68 @@ shader_parameter/rim_spread = 2.0
 shader_parameter/normal_scale = null
 shader_parameter/use_vertex_color_ao = false
 
-[sub_resource type="BoxMesh" id="BoxMesh_0pm4x"]
-material = SubResource("ShaderMaterial_xql0m")
-size = Vector3(6, 7, 0.6)
+[sub_resource type="BoxMesh" id="BoxMesh_tghst"]
+material = SubResource("ShaderMaterial_23y70")
+size = Vector3(6, 7, 1.2)
 
-[node name="Church" type="Node3D" unique_id=311177417]
+[node name="Church" type="Node3D" unique_id=968787860]
 
-[node name="@MeshInstance3D@2" type="MeshInstance3D" parent="." unique_id=1740096099]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+[node name="@MeshInstance3D@2" type="MeshInstance3D" parent="." unique_id=1965883918]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.5, 0)
 mesh = SubResource("BoxMesh_aqpog")
 
-[node name="@MeshInstance3D@3" type="MeshInstance3D" parent="." unique_id=1100336736]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
+[node name="@MeshInstance3D@3" type="MeshInstance3D" parent="." unique_id=501390888]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11, 0)
 mesh = SubResource("SphereMesh_hqxus")
 
-[node name="@MeshInstance3D@4" type="MeshInstance3D" parent="." unique_id=1006636351]
+[node name="@MeshInstance3D@4" type="MeshInstance3D" parent="." unique_id=1147468072]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 6, -5)
 mesh = SubResource("CylinderMesh_dr6qw")
 
-[node name="@MeshInstance3D@5" type="MeshInstance3D" parent="." unique_id=1081542695]
+[node name="@MeshInstance3D@5" type="MeshInstance3D" parent="." unique_id=1405256234]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 13.7, -5)
 mesh = SubResource("CylinderMesh_j18jj")
 
-[node name="@MeshInstance3D@6" type="MeshInstance3D" parent="." unique_id=923873402]
+[node name="@MeshInstance3D@6" type="MeshInstance3D" parent="." unique_id=1154391996]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 6, 5)
 mesh = SubResource("CylinderMesh_3n720")
 
-[node name="@MeshInstance3D@7" type="MeshInstance3D" parent="." unique_id=1604058529]
+[node name="@MeshInstance3D@7" type="MeshInstance3D" parent="." unique_id=1666938358]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 13.7, 5)
 mesh = SubResource("CylinderMesh_gc81w")
 
-[node name="@MeshInstance3D@8" type="MeshInstance3D" parent="." unique_id=1432892839]
+[node name="@MeshInstance3D@8" type="MeshInstance3D" parent="." unique_id=1662494982]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 6, -5)
 mesh = SubResource("CylinderMesh_swr7o")
 
-[node name="@MeshInstance3D@9" type="MeshInstance3D" parent="." unique_id=888414288]
+[node name="@MeshInstance3D@9" type="MeshInstance3D" parent="." unique_id=1664026506]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 13.7, -5)
 mesh = SubResource("CylinderMesh_obrd4")
 
-[node name="@MeshInstance3D@10" type="MeshInstance3D" parent="." unique_id=455121617]
+[node name="@MeshInstance3D@10" type="MeshInstance3D" parent="." unique_id=570422416]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 6, 5)
 mesh = SubResource("CylinderMesh_8fjh5")
 
-[node name="@MeshInstance3D@11" type="MeshInstance3D" parent="." unique_id=2096932292]
+[node name="@MeshInstance3D@11" type="MeshInstance3D" parent="." unique_id=781943385]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 13.7, 5)
 mesh = SubResource("CylinderMesh_nahcv")
 
-[node name="@MeshInstance3D@12" type="MeshInstance3D" parent="." unique_id=282751195]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 35, -12)
+[node name="@MeshInstance3D@12" type="MeshInstance3D" parent="." unique_id=816159097]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 10, 7)
 mesh = SubResource("CylinderMesh_exptb")
 
-[node name="@MeshInstance3D@13" type="MeshInstance3D" parent="." unique_id=1289987154]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 72.5, -12)
-mesh = SubResource("CylinderMesh_yixsl")
+[node name="@MeshInstance3D@13" type="MeshInstance3D" parent="." unique_id=1252031631]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.5, 23.25, 7)
+mesh = SubResource("CylinderMesh_xql0m")
 
-[node name="@MeshInstance3D@14" type="MeshInstance3D" parent="." unique_id=75315381]
+[node name="@MeshInstance3D@14" type="MeshInstance3D" parent="." unique_id=538992374]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 10, 7)
+mesh = SubResource("CylinderMesh_0pm4x")
+
+[node name="@MeshInstance3D@15" type="MeshInstance3D" parent="." unique_id=554239017]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 23.25, 7)
+mesh = SubResource("CylinderMesh_60fr5")
+
+[node name="@MeshInstance3D@16" type="MeshInstance3D" parent="." unique_id=1566142574]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, 8.1)
-mesh = SubResource("BoxMesh_0pm4x")
+mesh = SubResource("BoxMesh_tghst")

@@ -9,13 +9,13 @@ func _initialize() -> void:
 	var ps: PackedScene = load("res://scenes/sao_starting_city.tscn")
 	var inst = ps.instantiate()
 	root.add_child(inst)
+	process_frame.connect(_on_frame)
 
-func _process(_delta: float) -> bool:
+func _on_frame() -> void:
 	_frames += 1
 	if _frames >= 35:
 		var img := root.get_texture().get_image()
-		img.save_png("C:/Users/Admin/Documents/my-first-game/viewport_check.png")
-		print("CAPTURE_DONE")
+		var p := ProjectSettings.globalize_path("res://viewport_check.png")
+		img.save_png(p)
+		print("CAPTURE_DONE: ", p)
 		quit()
-		return true
-	return false
