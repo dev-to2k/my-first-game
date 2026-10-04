@@ -1,0 +1,11 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+
+# Temporary and test logs
+*.tmp
+*.log
+breakdown_out.txt
+diag.txt
+perf_results.txt
+verify_results.txt

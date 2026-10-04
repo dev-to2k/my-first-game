@@ -1,0 +1,1383 @@
+[gd_scene format=3]
+
+[ext_resource type="Shader" path="res://shaders/toon_cel_shading.gdshader" id="1_uoc66"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3adhp"]
+render_priority = 0
+shader = ExtResource("1_uoc66")
+shader_parameter/albedo_color = Color(1, 1, 0.99, 1)
+shader_parameter/uv_scale = null
+shader_parameter/uv_offset = null
+shader_parameter/shadow_tint = Color(0.8, 0.85, 0.95, 1)
+shader_parameter/shadow_threshold = 0.35
+shader_parameter/shadow_softness = 0.12
+shader_parameter/half_shadow_threshold = 0.6
+shader_parameter/half_shadow_softness = 0.1
+shader_parameter/half_shadow_intensity = 0.82
+shader_parameter/use_toon_ramp_texture = null
+shader_parameter/specular_size = 0.0
+shader_parameter/specular_softness = 0.015
+shader_parameter/specular_color = Color(1, 1, 1, 1)
+shader_parameter/roughness = 0.95
+shader_parameter/enable_rim = true
+shader_parameter/rim_color = Color(1, 0.97, 0.88, 1)
+shader_parameter/rim_threshold = 0.5
+shader_parameter/rim_softness = 0.1
+shader_parameter/rim_spread = 2.2
+shader_parameter/normal_scale = null
+shader_parameter/use_vertex_color_ao = false
+
+[sub_resource type="SphereMesh" id="SphereMesh_uat71"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 18.0
+height = 36.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_geqei"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 15.0
+height = 30.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_8rj8d"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 16.0
+height = 32.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_be8r5"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 13.0
+height = 26.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_invbo"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 13.0
+height = 26.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_l38qi"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 17.0
+height = 34.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_c0lxt"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 13.0
+height = 26.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_nuhun"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 14.0
+height = 28.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_4t3lj"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 11.0
+height = 22.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_vjkau"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 12.0
+height = 24.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_3wstq"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 18.0
+height = 36.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_svmae"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 15.0
+height = 30.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_vcbpn"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 16.0
+height = 32.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_7ikgj"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 13.0
+height = 26.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_67jj8"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 13.0
+height = 26.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_ayp86"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 17.0
+height = 34.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_ur4dk"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 13.0
+height = 26.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_irado"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 14.0
+height = 28.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_j6827"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 11.0
+height = 22.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_nsp7r"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 12.0
+height = 24.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_hmedu"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 18.0
+height = 36.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_83uk8"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 15.0
+height = 30.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_dbmx6"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 16.0
+height = 32.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_wvya6"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 13.0
+height = 26.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_xqmhq"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 13.0
+height = 26.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_eqeda"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 17.0
+height = 34.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_7p0ic"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 13.0
+height = 26.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_xnxdj"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 14.0
+height = 28.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_dmfhu"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 11.0
+height = 22.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_rx8do"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 12.0
+height = 24.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_5erhr"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 18.0
+height = 36.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_pr0qw"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 15.0
+height = 30.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_85awl"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 16.0
+height = 32.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_j6v4y"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 13.0
+height = 26.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_6kv06"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 13.0
+height = 26.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_5l536"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 17.0
+height = 34.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_3i4xs"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 13.0
+height = 26.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_5c2w7"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 14.0
+height = 28.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_xmcra"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 11.0
+height = 22.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_uwg4v"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 12.0
+height = 24.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_h2ygd"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 18.0
+height = 36.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_068xl"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 15.0
+height = 30.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_3ifmq"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 16.0
+height = 32.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_camvy"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 13.0
+height = 26.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_khhtf"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 13.0
+height = 26.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_jykjc"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 17.0
+height = 34.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_tbkml"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 13.0
+height = 26.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_h42gc"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 14.0
+height = 28.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_ebex8"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 11.0
+height = 22.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_adqn6"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 12.0
+height = 24.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_v0xnp"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 18.0
+height = 36.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_fbigs"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 15.0
+height = 30.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_jk7vh"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 16.0
+height = 32.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_c4o1p"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 13.0
+height = 26.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_ftwe8"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 13.0
+height = 26.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_eg18f"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 17.0
+height = 34.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_tddeh"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 13.0
+height = 26.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_3n10y"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 14.0
+height = 28.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_j3vub"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 11.0
+height = 22.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_111vx"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 12.0
+height = 24.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_a1jnk"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 18.0
+height = 36.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_xok7r"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 15.0
+height = 30.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_50fce"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 16.0
+height = 32.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_khx4n"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 13.0
+height = 26.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_t5fg2"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 13.0
+height = 26.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_joxs2"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 17.0
+height = 34.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_47cbf"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 13.0
+height = 26.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_tk1uo"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 14.0
+height = 28.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_asidn"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 11.0
+height = 22.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_krrpp"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 12.0
+height = 24.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_ehp50"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 18.0
+height = 36.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_wgw3h"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 15.0
+height = 30.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_meyxg"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 16.0
+height = 32.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_nht15"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 13.0
+height = 26.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_rwixr"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 13.0
+height = 26.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_wpw4e"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 17.0
+height = 34.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_m3ftt"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 13.0
+height = 26.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_mqjj2"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 14.0
+height = 28.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_au7p3"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 11.0
+height = 22.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_b0s2c"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 12.0
+height = 24.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_3f7dr"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 18.0
+height = 36.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_s1g77"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 15.0
+height = 30.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_qkgpp"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 16.0
+height = 32.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_55ehj"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 13.0
+height = 26.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_2i5mw"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 13.0
+height = 26.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_b8fym"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 17.0
+height = 34.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_4lmse"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 13.0
+height = 26.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_prxne"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 14.0
+height = 28.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_y8aq1"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 11.0
+height = 22.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_lwx1t"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 12.0
+height = 24.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_bokk7"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 18.0
+height = 36.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_iqewx"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 15.0
+height = 30.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_g66t0"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 16.0
+height = 32.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_0ij3h"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 13.0
+height = 26.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_wasll"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 13.0
+height = 26.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_6tqpq"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 17.0
+height = 34.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_oj6nf"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 13.0
+height = 26.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_sqmo1"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 14.0
+height = 28.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_fmpfg"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 11.0
+height = 22.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_wb0qe"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 12.0
+height = 24.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_i0d84"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 18.0
+height = 36.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_xitth"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 15.0
+height = 30.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_y1j81"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 16.0
+height = 32.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_bo2uc"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 13.0
+height = 26.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_n6yu8"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 13.0
+height = 26.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_ryhfv"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 17.0
+height = 34.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_vckmu"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 13.0
+height = 26.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_f1gw8"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 14.0
+height = 28.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_70ssh"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 11.0
+height = 22.0
+radial_segments = 14
+rings = 7
+
+[sub_resource type="SphereMesh" id="SphereMesh_eerhe"]
+material = SubResource("ShaderMaterial_3adhp")
+radius = 12.0
+height = 24.0
+radial_segments = 14
+rings = 7
+
+[node name="AnimeClouds" type="Node3D" unique_id=387512613]
+
+[node name="@Node3D@376" type="Node3D" parent="." unique_id=642464193]
+transform = Transform3D(1.55026, 0, 0.34636554, 0, 1.3, 0, -0.39584634, 0, 1.3564774, -270, 52, -280)
+
+[node name="@MeshInstance3D@366" type="MeshInstance3D" parent="@Node3D@376" unique_id=637523612]
+transform = Transform3D(1.3, 0, 0, 0, 0.72, 0, 0, 0, 1.1, 0, 0, 0)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_uat71")
+
+[node name="@MeshInstance3D@367" type="MeshInstance3D" parent="@Node3D@376" unique_id=248107975]
+transform = Transform3D(1.1, 0, 0, 0, 0.68, 0, 0, 0, 1, -14, -1, 3)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_geqei")
+
+[node name="@MeshInstance3D@368" type="MeshInstance3D" parent="@Node3D@376" unique_id=2089167366]
+transform = Transform3D(1.1, 0, 0, 0, 0.7, 0, 0, 0, 1, 15, -1, -2)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_8rj8d")
+
+[node name="@MeshInstance3D@369" type="MeshInstance3D" parent="@Node3D@376" unique_id=196144733]
+transform = Transform3D(1, 0, 0, 0, 0.65, 0, 0, 0, 1.1, 0, -2, -10)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_be8r5")
+
+[node name="@MeshInstance3D@370" type="MeshInstance3D" parent="@Node3D@376" unique_id=787656411]
+transform = Transform3D(1, 0, 0, 0, 0.65, 0, 0, 0, 1.1, 0, -2, 11)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_invbo")
+
+[node name="@MeshInstance3D@371" type="MeshInstance3D" parent="@Node3D@376" unique_id=1066617183]
+transform = Transform3D(1.1, 0, 0, 0, 1.15, 0, 0, 0, 1.1, 0, 8, 0)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_l38qi")
+
+[node name="@MeshInstance3D@372" type="MeshInstance3D" parent="@Node3D@376" unique_id=420024706]
+transform = Transform3D(1, 0, 0, 0, 1.1, 0, 0, 0, 1, -11, 7, 2)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_c0lxt")
+
+[node name="@MeshInstance3D@373" type="MeshInstance3D" parent="@Node3D@376" unique_id=1978218556]
+transform = Transform3D(1.05, 0, 0, 0, 1.12, 0, 0, 0, 1.05, 12, 8, -1)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_nuhun")
+
+[node name="@MeshInstance3D@374" type="MeshInstance3D" parent="@Node3D@376" unique_id=840627831]
+transform = Transform3D(0.95, 0, 0, 0, 1, 0, 0, 0, 0.95, 3, 6, 7)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_4t3lj")
+
+[node name="@MeshInstance3D@375" type="MeshInstance3D" parent="@Node3D@376" unique_id=1331221391]
+transform = Transform3D(0.95, 0, 0, 0, 1.05, 0, 0, 0, 0.95, -3, 7, -6)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_vjkau")
+
+[node name="@Node3D@387" type="Node3D" parent="." unique_id=1032738022]
+transform = Transform3D(1.6661133, 0, -0.27813706, 0, 1.4, 0, 0.33773786, 0, 1.3720932, -130, 58, -310)
+
+[node name="@MeshInstance3D@377" type="MeshInstance3D" parent="@Node3D@387" unique_id=1163720450]
+transform = Transform3D(1.3, 0, 0, 0, 0.72, 0, 0, 0, 1.1, 0, 0, 0)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_3wstq")
+
+[node name="@MeshInstance3D@378" type="MeshInstance3D" parent="@Node3D@387" unique_id=1839639900]
+transform = Transform3D(1.1, 0, 0, 0, 0.68, 0, 0, 0, 1, -14, -1, 3)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_svmae")
+
+[node name="@MeshInstance3D@379" type="MeshInstance3D" parent="@Node3D@387" unique_id=632807132]
+transform = Transform3D(1.1, 0, 0, 0, 0.7, 0, 0, 0, 1, 15, -1, -2)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_vcbpn")
+
+[node name="@MeshInstance3D@380" type="MeshInstance3D" parent="@Node3D@387" unique_id=1818857462]
+transform = Transform3D(1, 0, 0, 0, 0.65, 0, 0, 0, 1.1, 0, -2, -10)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_7ikgj")
+
+[node name="@MeshInstance3D@381" type="MeshInstance3D" parent="@Node3D@387" unique_id=318541983]
+transform = Transform3D(1, 0, 0, 0, 0.65, 0, 0, 0, 1.1, 0, -2, 11)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_67jj8")
+
+[node name="@MeshInstance3D@382" type="MeshInstance3D" parent="@Node3D@387" unique_id=1515192156]
+transform = Transform3D(1.1, 0, 0, 0, 1.15, 0, 0, 0, 1.1, 0, 8, 0)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_ayp86")
+
+[node name="@MeshInstance3D@383" type="MeshInstance3D" parent="@Node3D@387" unique_id=1223313001]
+transform = Transform3D(1, 0, 0, 0, 1.1, 0, 0, 0, 1, -11, 7, 2)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_ur4dk")
+
+[node name="@MeshInstance3D@384" type="MeshInstance3D" parent="@Node3D@387" unique_id=1531690443]
+transform = Transform3D(1.05, 0, 0, 0, 1.12, 0, 0, 0, 1.05, 12, 8, -1)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_irado")
+
+[node name="@MeshInstance3D@385" type="MeshInstance3D" parent="@Node3D@387" unique_id=413394498]
+transform = Transform3D(0.95, 0, 0, 0, 1, 0, 0, 0, 0.95, 3, 6, 7)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_j6827")
+
+[node name="@MeshInstance3D@386" type="MeshInstance3D" parent="@Node3D@387" unique_id=2141446804]
+transform = Transform3D(0.95, 0, 0, 0, 1.05, 0, 0, 0, 0.95, -3, 7, -6)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_nsp7r")
+
+[node name="@Node3D@398" type="Node3D" parent="." unique_id=1132845027]
+transform = Transform3D(1.6240721, 0, 0.4137283, 0, 1.35, 0, -0.50238436, 0, 1.3374711, 140, 56, -300)
+
+[node name="@MeshInstance3D@388" type="MeshInstance3D" parent="@Node3D@398" unique_id=956946736]
+transform = Transform3D(1.3, 0, 0, 0, 0.72, 0, 0, 0, 1.1, 0, 0, 0)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_hmedu")
+
+[node name="@MeshInstance3D@389" type="MeshInstance3D" parent="@Node3D@398" unique_id=1061943533]
+transform = Transform3D(1.1, 0, 0, 0, 0.68, 0, 0, 0, 1, -14, -1, 3)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_83uk8")
+
+[node name="@MeshInstance3D@390" type="MeshInstance3D" parent="@Node3D@398" unique_id=1259483387]
+transform = Transform3D(1.1, 0, 0, 0, 0.7, 0, 0, 0, 1, 15, -1, -2)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_dbmx6")
+
+[node name="@MeshInstance3D@391" type="MeshInstance3D" parent="@Node3D@398" unique_id=587203235]
+transform = Transform3D(1, 0, 0, 0, 0.65, 0, 0, 0, 1.1, 0, -2, -10)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_wvya6")
+
+[node name="@MeshInstance3D@392" type="MeshInstance3D" parent="@Node3D@398" unique_id=564061390]
+transform = Transform3D(1, 0, 0, 0, 0.65, 0, 0, 0, 1.1, 0, -2, 11)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_xqmhq")
+
+[node name="@MeshInstance3D@393" type="MeshInstance3D" parent="@Node3D@398" unique_id=1042502690]
+transform = Transform3D(1.1, 0, 0, 0, 1.15, 0, 0, 0, 1.1, 0, 8, 0)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_eqeda")
+
+[node name="@MeshInstance3D@394" type="MeshInstance3D" parent="@Node3D@398" unique_id=667932923]
+transform = Transform3D(1, 0, 0, 0, 1.1, 0, 0, 0, 1, -11, 7, 2)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_7p0ic")
+
+[node name="@MeshInstance3D@395" type="MeshInstance3D" parent="@Node3D@398" unique_id=921921338]
+transform = Transform3D(1.05, 0, 0, 0, 1.12, 0, 0, 0, 1.05, 12, 8, -1)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_xnxdj")
+
+[node name="@MeshInstance3D@396" type="MeshInstance3D" parent="@Node3D@398" unique_id=2058348419]
+transform = Transform3D(0.95, 0, 0, 0, 1, 0, 0, 0, 0.95, 3, 6, 7)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_dmfhu")
+
+[node name="@MeshInstance3D@397" type="MeshInstance3D" parent="@Node3D@398" unique_id=1431454408]
+transform = Transform3D(0.95, 0, 0, 0, 1.05, 0, 0, 0, 0.95, -3, 7, -6)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_rx8do")
+
+[node name="@Node3D@409" type="Node3D" parent="." unique_id=2126084852]
+transform = Transform3D(1.4533687, 0, -0.32162514, 0, 1.25, 0, 0.37110594, 0, 1.2595861, 275, 50, -270)
+
+[node name="@MeshInstance3D@399" type="MeshInstance3D" parent="@Node3D@409" unique_id=925691357]
+transform = Transform3D(1.3, 0, 0, 0, 0.72, 0, 0, 0, 1.1, 0, 0, 0)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_5erhr")
+
+[node name="@MeshInstance3D@400" type="MeshInstance3D" parent="@Node3D@409" unique_id=1056400162]
+transform = Transform3D(1.1, 0, 0, 0, 0.68, 0, 0, 0, 1, -14, -1, 3)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_pr0qw")
+
+[node name="@MeshInstance3D@401" type="MeshInstance3D" parent="@Node3D@409" unique_id=72788625]
+transform = Transform3D(1.1, 0, 0, 0, 0.7, 0, 0, 0, 1, 15, -1, -2)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_85awl")
+
+[node name="@MeshInstance3D@402" type="MeshInstance3D" parent="@Node3D@409" unique_id=1031235867]
+transform = Transform3D(1, 0, 0, 0, 0.65, 0, 0, 0, 1.1, 0, -2, -10)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_j6v4y")
+
+[node name="@MeshInstance3D@403" type="MeshInstance3D" parent="@Node3D@409" unique_id=782506225]
+transform = Transform3D(1, 0, 0, 0, 0.65, 0, 0, 0, 1.1, 0, -2, 11)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_6kv06")
+
+[node name="@MeshInstance3D@404" type="MeshInstance3D" parent="@Node3D@409" unique_id=2137423147]
+transform = Transform3D(1.1, 0, 0, 0, 1.15, 0, 0, 0, 1.1, 0, 8, 0)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_5l536")
+
+[node name="@MeshInstance3D@405" type="MeshInstance3D" parent="@Node3D@409" unique_id=2105190547]
+transform = Transform3D(1, 0, 0, 0, 1.1, 0, 0, 0, 1, -11, 7, 2)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_3i4xs")
+
+[node name="@MeshInstance3D@406" type="MeshInstance3D" parent="@Node3D@409" unique_id=524912494]
+transform = Transform3D(1.05, 0, 0, 0, 1.12, 0, 0, 0, 1.05, 12, 8, -1)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_5c2w7")
+
+[node name="@MeshInstance3D@407" type="MeshInstance3D" parent="@Node3D@409" unique_id=1586996423]
+transform = Transform3D(0.95, 0, 0, 0, 1, 0, 0, 0, 0.95, 3, 6, 7)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_xmcra")
+
+[node name="@MeshInstance3D@408" type="MeshInstance3D" parent="@Node3D@409" unique_id=784699611]
+transform = Transform3D(0.95, 0, 0, 0, 1.05, 0, 0, 0, 0.95, -3, 7, -6)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_uwg4v")
+
+[node name="@Node3D@420" type="Node3D" parent="." unique_id=1613821906]
+transform = Transform3D(1.3163738, 0, 0.62325317, 0, 1.2, 0, -0.7191383, 0, 1.1408572, -360, 48, -170)
+
+[node name="@MeshInstance3D@410" type="MeshInstance3D" parent="@Node3D@420" unique_id=1262177898]
+transform = Transform3D(1.3, 0, 0, 0, 0.72, 0, 0, 0, 1.1, 0, 0, 0)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_h2ygd")
+
+[node name="@MeshInstance3D@411" type="MeshInstance3D" parent="@Node3D@420" unique_id=531459353]
+transform = Transform3D(1.1, 0, 0, 0, 0.68, 0, 0, 0, 1, -14, -1, 3)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_068xl")
+
+[node name="@MeshInstance3D@412" type="MeshInstance3D" parent="@Node3D@420" unique_id=1339003665]
+transform = Transform3D(1.1, 0, 0, 0, 0.7, 0, 0, 0, 1, 15, -1, -2)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_3ifmq")
+
+[node name="@MeshInstance3D@413" type="MeshInstance3D" parent="@Node3D@420" unique_id=1453027376]
+transform = Transform3D(1, 0, 0, 0, 0.65, 0, 0, 0, 1.1, 0, -2, -10)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_camvy")
+
+[node name="@MeshInstance3D@414" type="MeshInstance3D" parent="@Node3D@420" unique_id=1430204562]
+transform = Transform3D(1, 0, 0, 0, 0.65, 0, 0, 0, 1.1, 0, -2, 11)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_khhtf")
+
+[node name="@MeshInstance3D@415" type="MeshInstance3D" parent="@Node3D@420" unique_id=2091293523]
+transform = Transform3D(1.1, 0, 0, 0, 1.15, 0, 0, 0, 1.1, 0, 8, 0)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_jykjc")
+
+[node name="@MeshInstance3D@416" type="MeshInstance3D" parent="@Node3D@420" unique_id=911317289]
+transform = Transform3D(1, 0, 0, 0, 1.1, 0, 0, 0, 1, -11, 7, 2)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_tbkml")
+
+[node name="@MeshInstance3D@417" type="MeshInstance3D" parent="@Node3D@420" unique_id=1170833797]
+transform = Transform3D(1.05, 0, 0, 0, 1.12, 0, 0, 0, 1.05, 12, 8, -1)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_h42gc")
+
+[node name="@MeshInstance3D@418" type="MeshInstance3D" parent="@Node3D@420" unique_id=1345172228]
+transform = Transform3D(0.95, 0, 0, 0, 1, 0, 0, 0, 0.95, 3, 6, 7)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_ebex8")
+
+[node name="@MeshInstance3D@419" type="MeshInstance3D" parent="@Node3D@420" unique_id=1891356418]
+transform = Transform3D(0.95, 0, 0, 0, 1.05, 0, 0, 0, 0.95, -3, 7, -6)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_adqn6")
+
+[node name="@Node3D@431" type="Node3D" parent="." unique_id=198417592]
+transform = Transform3D(1.3506707, 0, -0.56545514, 0, 1.2, 0, 0.6524483, 0, 1.1705812, 365, 48, -160)
+
+[node name="@MeshInstance3D@421" type="MeshInstance3D" parent="@Node3D@431" unique_id=182303093]
+transform = Transform3D(1.3, 0, 0, 0, 0.72, 0, 0, 0, 1.1, 0, 0, 0)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_v0xnp")
+
+[node name="@MeshInstance3D@422" type="MeshInstance3D" parent="@Node3D@431" unique_id=102009753]
+transform = Transform3D(1.1, 0, 0, 0, 0.68, 0, 0, 0, 1, -14, -1, 3)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_fbigs")
+
+[node name="@MeshInstance3D@423" type="MeshInstance3D" parent="@Node3D@431" unique_id=1461313278]
+transform = Transform3D(1.1, 0, 0, 0, 0.7, 0, 0, 0, 1, 15, -1, -2)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_jk7vh")
+
+[node name="@MeshInstance3D@424" type="MeshInstance3D" parent="@Node3D@431" unique_id=1817144235]
+transform = Transform3D(1, 0, 0, 0, 0.65, 0, 0, 0, 1.1, 0, -2, -10)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_c4o1p")
+
+[node name="@MeshInstance3D@425" type="MeshInstance3D" parent="@Node3D@431" unique_id=1793741765]
+transform = Transform3D(1, 0, 0, 0, 0.65, 0, 0, 0, 1.1, 0, -2, 11)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_ftwe8")
+
+[node name="@MeshInstance3D@426" type="MeshInstance3D" parent="@Node3D@431" unique_id=1492926701]
+transform = Transform3D(1.1, 0, 0, 0, 1.15, 0, 0, 0, 1.1, 0, 8, 0)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_eg18f")
+
+[node name="@MeshInstance3D@427" type="MeshInstance3D" parent="@Node3D@431" unique_id=1770365822]
+transform = Transform3D(1, 0, 0, 0, 1.1, 0, 0, 0, 1, -11, 7, 2)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_tddeh")
+
+[node name="@MeshInstance3D@428" type="MeshInstance3D" parent="@Node3D@431" unique_id=1901938584]
+transform = Transform3D(1.05, 0, 0, 0, 1.12, 0, 0, 0, 1.05, 12, 8, -1)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_3n10y")
+
+[node name="@MeshInstance3D@429" type="MeshInstance3D" parent="@Node3D@431" unique_id=2078906409]
+transform = Transform3D(0.95, 0, 0, 0, 1, 0, 0, 0, 0.95, 3, 6, 7)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_j3vub")
+
+[node name="@MeshInstance3D@430" type="MeshInstance3D" parent="@Node3D@431" unique_id=111840274]
+transform = Transform3D(0.95, 0, 0, 0, 1.05, 0, 0, 0, 0.95, -3, 7, -6)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_111vx")
+
+[node name="@Node3D@442" type="Node3D" parent="." unique_id=1736770398]
+transform = Transform3D(1.2740865, 0, 0.2384032, 0, 1, 0, -0.2582701, 0, 1.17608, -160, 88, -75)
+
+[node name="@MeshInstance3D@432" type="MeshInstance3D" parent="@Node3D@442" unique_id=840308224]
+transform = Transform3D(1.3, 0, 0, 0, 0.72, 0, 0, 0, 1.1, 0, 0, 0)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_a1jnk")
+
+[node name="@MeshInstance3D@433" type="MeshInstance3D" parent="@Node3D@442" unique_id=1827231393]
+transform = Transform3D(1.1, 0, 0, 0, 0.68, 0, 0, 0, 1, -14, -1, 3)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_xok7r")
+
+[node name="@MeshInstance3D@434" type="MeshInstance3D" parent="@Node3D@442" unique_id=613322262]
+transform = Transform3D(1.1, 0, 0, 0, 0.7, 0, 0, 0, 1, 15, -1, -2)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_50fce")
+
+[node name="@MeshInstance3D@435" type="MeshInstance3D" parent="@Node3D@442" unique_id=1541782734]
+transform = Transform3D(1, 0, 0, 0, 0.65, 0, 0, 0, 1.1, 0, -2, -10)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_khx4n")
+
+[node name="@MeshInstance3D@436" type="MeshInstance3D" parent="@Node3D@442" unique_id=889294422]
+transform = Transform3D(1, 0, 0, 0, 0.65, 0, 0, 0, 1.1, 0, -2, 11)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_t5fg2")
+
+[node name="@MeshInstance3D@437" type="MeshInstance3D" parent="@Node3D@442" unique_id=2111248057]
+transform = Transform3D(1.1, 0, 0, 0, 1.15, 0, 0, 0, 1.1, 0, 8, 0)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_joxs2")
+
+[node name="@MeshInstance3D@438" type="MeshInstance3D" parent="@Node3D@442" unique_id=1894228332]
+transform = Transform3D(1, 0, 0, 0, 1.1, 0, 0, 0, 1, -11, 7, 2)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_47cbf")
+
+[node name="@MeshInstance3D@439" type="MeshInstance3D" parent="@Node3D@442" unique_id=716374493]
+transform = Transform3D(1.05, 0, 0, 0, 1.12, 0, 0, 0, 1.05, 12, 8, -1)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_tk1uo")
+
+[node name="@MeshInstance3D@440" type="MeshInstance3D" parent="@Node3D@442" unique_id=1064255437]
+transform = Transform3D(0.95, 0, 0, 0, 1, 0, 0, 0, 0.95, 3, 6, 7)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_asidn")
+
+[node name="@MeshInstance3D@441" type="MeshInstance3D" parent="@Node3D@442" unique_id=602033360]
+transform = Transform3D(0.95, 0, 0, 0, 1.05, 0, 0, 0, 0.95, -3, 7, -6)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_krrpp")
+
+[node name="@Node3D@453" type="Node3D" parent="." unique_id=1678329923]
+transform = Transform3D(1.2897043, 0, -0.35462427, 0, 1.05, 0, 0.3989523, 0, 1.1464039, 170, 90, -85)
+
+[node name="@MeshInstance3D@443" type="MeshInstance3D" parent="@Node3D@453" unique_id=2005700087]
+transform = Transform3D(1.3, 0, 0, 0, 0.72, 0, 0, 0, 1.1, 0, 0, 0)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_ehp50")
+
+[node name="@MeshInstance3D@444" type="MeshInstance3D" parent="@Node3D@453" unique_id=42867035]
+transform = Transform3D(1.1, 0, 0, 0, 0.68, 0, 0, 0, 1, -14, -1, 3)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_wgw3h")
+
+[node name="@MeshInstance3D@445" type="MeshInstance3D" parent="@Node3D@453" unique_id=1019418187]
+transform = Transform3D(1.1, 0, 0, 0, 0.7, 0, 0, 0, 1, 15, -1, -2)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_meyxg")
+
+[node name="@MeshInstance3D@446" type="MeshInstance3D" parent="@Node3D@453" unique_id=1936099764]
+transform = Transform3D(1, 0, 0, 0, 0.65, 0, 0, 0, 1.1, 0, -2, -10)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_nht15")
+
+[node name="@MeshInstance3D@447" type="MeshInstance3D" parent="@Node3D@453" unique_id=277990749]
+transform = Transform3D(1, 0, 0, 0, 0.65, 0, 0, 0, 1.1, 0, -2, 11)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_rwixr")
+
+[node name="@MeshInstance3D@448" type="MeshInstance3D" parent="@Node3D@453" unique_id=529397846]
+transform = Transform3D(1.1, 0, 0, 0, 1.15, 0, 0, 0, 1.1, 0, 8, 0)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_wpw4e")
+
+[node name="@MeshInstance3D@449" type="MeshInstance3D" parent="@Node3D@453" unique_id=1508988656]
+transform = Transform3D(1, 0, 0, 0, 1.1, 0, 0, 0, 1, -11, 7, 2)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_m3ftt")
+
+[node name="@MeshInstance3D@450" type="MeshInstance3D" parent="@Node3D@453" unique_id=219641691]
+transform = Transform3D(1.05, 0, 0, 0, 1.12, 0, 0, 0, 1.05, 12, 8, -1)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_mqjj2")
+
+[node name="@MeshInstance3D@451" type="MeshInstance3D" parent="@Node3D@453" unique_id=1408658802]
+transform = Transform3D(0.95, 0, 0, 0, 1, 0, 0, 0, 0.95, 3, 6, 7)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_au7p3")
+
+[node name="@MeshInstance3D@452" type="MeshInstance3D" parent="@Node3D@453" unique_id=2109900968]
+transform = Transform3D(0.95, 0, 0, 0, 1.05, 0, 0, 0, 0.95, -3, 7, -6)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_b0s2c")
+
+[node name="@Node3D@464" type="Node3D" parent="." unique_id=270645168]
+transform = Transform3D(1.1052732, 0, 0.42836016, 0, 0.95, 0, -0.46730202, 0, 1.0131671, -220, 92, 15)
+
+[node name="@MeshInstance3D@454" type="MeshInstance3D" parent="@Node3D@464" unique_id=667217755]
+transform = Transform3D(1.3, 0, 0, 0, 0.72, 0, 0, 0, 1.1, 0, 0, 0)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_3f7dr")
+
+[node name="@MeshInstance3D@455" type="MeshInstance3D" parent="@Node3D@464" unique_id=737235318]
+transform = Transform3D(1.1, 0, 0, 0, 0.68, 0, 0, 0, 1, -14, -1, 3)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_s1g77")
+
+[node name="@MeshInstance3D@456" type="MeshInstance3D" parent="@Node3D@464" unique_id=666688261]
+transform = Transform3D(1.1, 0, 0, 0, 0.7, 0, 0, 0, 1, 15, -1, -2)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_qkgpp")
+
+[node name="@MeshInstance3D@457" type="MeshInstance3D" parent="@Node3D@464" unique_id=2111838573]
+transform = Transform3D(1, 0, 0, 0, 0.65, 0, 0, 0, 1.1, 0, -2, -10)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_55ehj")
+
+[node name="@MeshInstance3D@458" type="MeshInstance3D" parent="@Node3D@464" unique_id=940609140]
+transform = Transform3D(1, 0, 0, 0, 0.65, 0, 0, 0, 1.1, 0, -2, 11)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_2i5mw")
+
+[node name="@MeshInstance3D@459" type="MeshInstance3D" parent="@Node3D@464" unique_id=256772705]
+transform = Transform3D(1.1, 0, 0, 0, 1.15, 0, 0, 0, 1.1, 0, 8, 0)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_b8fym")
+
+[node name="@MeshInstance3D@460" type="MeshInstance3D" parent="@Node3D@464" unique_id=1157946836]
+transform = Transform3D(1, 0, 0, 0, 1.1, 0, 0, 0, 1, -11, 7, 2)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_4lmse")
+
+[node name="@MeshInstance3D@461" type="MeshInstance3D" parent="@Node3D@464" unique_id=1393277442]
+transform = Transform3D(1.05, 0, 0, 0, 1.12, 0, 0, 0, 1.05, 12, 8, -1)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_prxne")
+
+[node name="@MeshInstance3D@462" type="MeshInstance3D" parent="@Node3D@464" unique_id=534401028]
+transform = Transform3D(0.95, 0, 0, 0, 1, 0, 0, 0, 0.95, 3, 6, 7)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_y8aq1")
+
+[node name="@MeshInstance3D@463" type="MeshInstance3D" parent="@Node3D@464" unique_id=1578376725]
+transform = Transform3D(0.95, 0, 0, 0, 1.05, 0, 0, 0, 0.95, -3, 7, -6)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_lwx1t")
+
+[node name="@Node3D@475" type="Node3D" parent="." unique_id=252456622]
+transform = Transform3D(1.1742159, 0, -0.39433247, 0, 1, 0, 0.42862225, 0, 1.0802786, 230, 90, 5)
+
+[node name="@MeshInstance3D@465" type="MeshInstance3D" parent="@Node3D@475" unique_id=1733316123]
+transform = Transform3D(1.3, 0, 0, 0, 0.72, 0, 0, 0, 1.1, 0, 0, 0)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_bokk7")
+
+[node name="@MeshInstance3D@466" type="MeshInstance3D" parent="@Node3D@475" unique_id=10257251]
+transform = Transform3D(1.1, 0, 0, 0, 0.68, 0, 0, 0, 1, -14, -1, 3)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_iqewx")
+
+[node name="@MeshInstance3D@467" type="MeshInstance3D" parent="@Node3D@475" unique_id=1114378545]
+transform = Transform3D(1.1, 0, 0, 0, 0.7, 0, 0, 0, 1, 15, -1, -2)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_g66t0")
+
+[node name="@MeshInstance3D@468" type="MeshInstance3D" parent="@Node3D@475" unique_id=1382991874]
+transform = Transform3D(1, 0, 0, 0, 0.65, 0, 0, 0, 1.1, 0, -2, -10)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_0ij3h")
+
+[node name="@MeshInstance3D@469" type="MeshInstance3D" parent="@Node3D@475" unique_id=836049362]
+transform = Transform3D(1, 0, 0, 0, 0.65, 0, 0, 0, 1.1, 0, -2, 11)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_wasll")
+
+[node name="@MeshInstance3D@470" type="MeshInstance3D" parent="@Node3D@475" unique_id=1029240398]
+transform = Transform3D(1.1, 0, 0, 0, 1.15, 0, 0, 0, 1.1, 0, 8, 0)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_6tqpq")
+
+[node name="@MeshInstance3D@471" type="MeshInstance3D" parent="@Node3D@475" unique_id=2101160252]
+transform = Transform3D(1, 0, 0, 0, 1.1, 0, 0, 0, 1, -11, 7, 2)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_oj6nf")
+
+[node name="@MeshInstance3D@472" type="MeshInstance3D" parent="@Node3D@475" unique_id=264815912]
+transform = Transform3D(1.05, 0, 0, 0, 1.12, 0, 0, 0, 1.05, 12, 8, -1)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_sqmo1")
+
+[node name="@MeshInstance3D@473" type="MeshInstance3D" parent="@Node3D@475" unique_id=1718875496]
+transform = Transform3D(0.95, 0, 0, 0, 1, 0, 0, 0, 0.95, 3, 6, 7)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_fmpfg")
+
+[node name="@MeshInstance3D@474" type="MeshInstance3D" parent="@Node3D@475" unique_id=2026521423]
+transform = Transform3D(0.95, 0, 0, 0, 1.05, 0, 0, 0, 0.95, -3, 7, -6)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_wb0qe")
+
+[node name="@Node3D@486" type="Node3D" parent="." unique_id=540179257]
+transform = Transform3D(1.3930058, 0, 0.12479178, 0, 1.1, 0, -0.13976678, 0, 1.2437552, 0, 94, -145)
+
+[node name="@MeshInstance3D@476" type="MeshInstance3D" parent="@Node3D@486" unique_id=677546164]
+transform = Transform3D(1.3, 0, 0, 0, 0.72, 0, 0, 0, 1.1, 0, 0, 0)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_i0d84")
+
+[node name="@MeshInstance3D@477" type="MeshInstance3D" parent="@Node3D@486" unique_id=886218892]
+transform = Transform3D(1.1, 0, 0, 0, 0.68, 0, 0, 0, 1, -14, -1, 3)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_xitth")
+
+[node name="@MeshInstance3D@478" type="MeshInstance3D" parent="@Node3D@486" unique_id=1215062584]
+transform = Transform3D(1.1, 0, 0, 0, 0.7, 0, 0, 0, 1, 15, -1, -2)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_y1j81")
+
+[node name="@MeshInstance3D@479" type="MeshInstance3D" parent="@Node3D@486" unique_id=1338513551]
+transform = Transform3D(1, 0, 0, 0, 0.65, 0, 0, 0, 1.1, 0, -2, -10)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_bo2uc")
+
+[node name="@MeshInstance3D@480" type="MeshInstance3D" parent="@Node3D@486" unique_id=736418304]
+transform = Transform3D(1, 0, 0, 0, 0.65, 0, 0, 0, 1.1, 0, -2, 11)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_n6yu8")
+
+[node name="@MeshInstance3D@481" type="MeshInstance3D" parent="@Node3D@486" unique_id=914691856]
+transform = Transform3D(1.1, 0, 0, 0, 1.15, 0, 0, 0, 1.1, 0, 8, 0)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_ryhfv")
+
+[node name="@MeshInstance3D@482" type="MeshInstance3D" parent="@Node3D@486" unique_id=150556690]
+transform = Transform3D(1, 0, 0, 0, 1.1, 0, 0, 0, 1, -11, 7, 2)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_vckmu")
+
+[node name="@MeshInstance3D@483" type="MeshInstance3D" parent="@Node3D@486" unique_id=490443994]
+transform = Transform3D(1.05, 0, 0, 0, 1.12, 0, 0, 0, 1.05, 12, 8, -1)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_f1gw8")
+
+[node name="@MeshInstance3D@484" type="MeshInstance3D" parent="@Node3D@486" unique_id=2104356812]
+transform = Transform3D(0.95, 0, 0, 0, 1, 0, 0, 0, 0.95, 3, 6, 7)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_70ssh")
+
+[node name="@MeshInstance3D@485" type="MeshInstance3D" parent="@Node3D@486" unique_id=675939983]
+transform = Transform3D(0.95, 0, 0, 0, 1.05, 0, 0, 0, 0.95, -3, 7, -6)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_eerhe")

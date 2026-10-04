@@ -1,0 +1,255 @@
+[gd_scene format=3]
+
+[ext_resource type="Shader" path="res://shaders/inverted_hull_outline.gdshader" id="1_vv0dy"]
+[ext_resource type="Shader" path="res://shaders/toon_cel_shading.gdshader" id="2_82yic"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jfcjk"]
+render_priority = 0
+shader = ExtResource("1_vv0dy")
+shader_parameter/outline_color = Color(0.12, 0.14, 0.18, 1)
+shader_parameter/outline_width = 2.0
+shader_parameter/min_distance_clamp = 0.5
+shader_parameter/max_distance_clamp = 120.0
+shader_parameter/enable_distance_fade = true
+shader_parameter/fade_start_distance = 60.0
+shader_parameter/fade_end_distance = 120.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b5cqe"]
+render_priority = 0
+next_pass = SubResource("ShaderMaterial_jfcjk")
+shader = ExtResource("2_82yic")
+shader_parameter/albedo_color = Color(0.906, 0.894, 0.863, 1)
+shader_parameter/uv_scale = null
+shader_parameter/uv_offset = null
+shader_parameter/shadow_tint = Color(0.549, 0.6, 0.722, 1)
+shader_parameter/shadow_threshold = 0.35
+shader_parameter/shadow_softness = 0.02
+shader_parameter/half_shadow_threshold = 0.6
+shader_parameter/half_shadow_softness = 0.03
+shader_parameter/half_shadow_intensity = 0.5
+shader_parameter/use_toon_ramp_texture = null
+shader_parameter/specular_size = 0.0
+shader_parameter/specular_softness = 0.015
+shader_parameter/specular_color = Color(1, 1, 1, 1)
+shader_parameter/roughness = 0.9
+shader_parameter/enable_rim = true
+shader_parameter/rim_color = Color(0.95, 0.98, 1, 1)
+shader_parameter/rim_threshold = 0.5
+shader_parameter/rim_softness = 0.04
+shader_parameter/rim_spread = 2.0
+shader_parameter/normal_scale = null
+shader_parameter/use_vertex_color_ao = false
+
+[sub_resource type="BoxMesh" id="BoxMesh_aqpog"]
+material = SubResource("ShaderMaterial_b5cqe")
+size = Vector3(26, 10, 16)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b6cfa"]
+render_priority = 0
+shader = ExtResource("1_vv0dy")
+shader_parameter/outline_color = Color(0.12, 0.14, 0.18, 1)
+shader_parameter/outline_width = 2.0
+shader_parameter/min_distance_clamp = 0.5
+shader_parameter/max_distance_clamp = 120.0
+shader_parameter/enable_distance_fade = true
+shader_parameter/fade_start_distance = 60.0
+shader_parameter/fade_end_distance = 120.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_145qg"]
+render_priority = 0
+next_pass = SubResource("ShaderMaterial_b6cfa")
+shader = ExtResource("2_82yic")
+shader_parameter/albedo_color = Color(0.45, 0.55, 0.62, 1)
+shader_parameter/uv_scale = null
+shader_parameter/uv_offset = null
+shader_parameter/shadow_tint = Color(0.549, 0.6, 0.722, 1)
+shader_parameter/shadow_threshold = 0.35
+shader_parameter/shadow_softness = 0.02
+shader_parameter/half_shadow_threshold = 0.6
+shader_parameter/half_shadow_softness = 0.03
+shader_parameter/half_shadow_intensity = 0.5
+shader_parameter/use_toon_ramp_texture = null
+shader_parameter/specular_size = 0.05
+shader_parameter/specular_softness = 0.015
+shader_parameter/specular_color = Color(1, 1, 1, 1)
+shader_parameter/roughness = 0.5
+shader_parameter/enable_rim = true
+shader_parameter/rim_color = Color(0.95, 0.98, 1, 1)
+shader_parameter/rim_threshold = 0.5
+shader_parameter/rim_softness = 0.04
+shader_parameter/rim_spread = 2.0
+shader_parameter/normal_scale = null
+shader_parameter/use_vertex_color_ao = false
+
+[sub_resource type="SphereMesh" id="SphereMesh_hqxus"]
+material = SubResource("ShaderMaterial_145qg")
+radius = 9.0
+height = 9.0
+radial_segments = 16
+rings = 8
+is_hemisphere = true
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_dr6qw"]
+material = SubResource("ShaderMaterial_b5cqe")
+top_radius = 1.6
+bottom_radius = 1.8
+height = 12.0
+radial_segments = 12
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_j18jj"]
+material = SubResource("ShaderMaterial_145qg")
+top_radius = 0.05
+bottom_radius = 1.7
+height = 3.4
+radial_segments = 12
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_3n720"]
+material = SubResource("ShaderMaterial_b5cqe")
+top_radius = 1.6
+bottom_radius = 1.8
+height = 12.0
+radial_segments = 12
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_gc81w"]
+material = SubResource("ShaderMaterial_145qg")
+top_radius = 0.05
+bottom_radius = 1.7
+height = 3.4
+radial_segments = 12
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_swr7o"]
+material = SubResource("ShaderMaterial_b5cqe")
+top_radius = 1.6
+bottom_radius = 1.8
+height = 12.0
+radial_segments = 12
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_obrd4"]
+material = SubResource("ShaderMaterial_145qg")
+top_radius = 0.05
+bottom_radius = 1.7
+height = 3.4
+radial_segments = 12
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_8fjh5"]
+material = SubResource("ShaderMaterial_b5cqe")
+top_radius = 1.6
+bottom_radius = 1.8
+height = 12.0
+radial_segments = 12
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_nahcv"]
+material = SubResource("ShaderMaterial_145qg")
+top_radius = 0.05
+bottom_radius = 1.7
+height = 3.4
+radial_segments = 12
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_exptb"]
+material = SubResource("ShaderMaterial_b5cqe")
+top_radius = 1.1
+bottom_radius = 1.4
+height = 70.0
+radial_segments = 12
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_yixsl"]
+material = SubResource("ShaderMaterial_145qg")
+top_radius = 0.05
+bottom_radius = 1.3
+height = 5.0
+radial_segments = 12
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xyvm1"]
+render_priority = 0
+shader = ExtResource("1_vv0dy")
+shader_parameter/outline_color = Color(0.12, 0.14, 0.18, 1)
+shader_parameter/outline_width = 2.0
+shader_parameter/min_distance_clamp = 0.5
+shader_parameter/max_distance_clamp = 120.0
+shader_parameter/enable_distance_fade = true
+shader_parameter/fade_start_distance = 60.0
+shader_parameter/fade_end_distance = 120.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xql0m"]
+render_priority = 0
+next_pass = SubResource("ShaderMaterial_xyvm1")
+shader = ExtResource("2_82yic")
+shader_parameter/albedo_color = Color(0.16, 0.17, 0.2, 1)
+shader_parameter/uv_scale = null
+shader_parameter/uv_offset = null
+shader_parameter/shadow_tint = Color(0.549, 0.6, 0.722, 1)
+shader_parameter/shadow_threshold = 0.35
+shader_parameter/shadow_softness = 0.02
+shader_parameter/half_shadow_threshold = 0.6
+shader_parameter/half_shadow_softness = 0.03
+shader_parameter/half_shadow_intensity = 0.5
+shader_parameter/use_toon_ramp_texture = null
+shader_parameter/specular_size = 0.05
+shader_parameter/specular_softness = 0.015
+shader_parameter/specular_color = Color(1, 1, 1, 1)
+shader_parameter/roughness = 0.6
+shader_parameter/enable_rim = true
+shader_parameter/rim_color = Color(0.95, 0.98, 1, 1)
+shader_parameter/rim_threshold = 0.5
+shader_parameter/rim_softness = 0.04
+shader_parameter/rim_spread = 2.0
+shader_parameter/normal_scale = null
+shader_parameter/use_vertex_color_ao = false
+
+[sub_resource type="BoxMesh" id="BoxMesh_0pm4x"]
+material = SubResource("ShaderMaterial_xql0m")
+size = Vector3(6, 7, 0.6)
+
+[node name="Church" type="Node3D" unique_id=311177417]
+
+[node name="@MeshInstance3D@2" type="MeshInstance3D" parent="." unique_id=1740096099]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+mesh = SubResource("BoxMesh_aqpog")
+
+[node name="@MeshInstance3D@3" type="MeshInstance3D" parent="." unique_id=1100336736]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
+mesh = SubResource("SphereMesh_hqxus")
+
+[node name="@MeshInstance3D@4" type="MeshInstance3D" parent="." unique_id=1006636351]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 6, -5)
+mesh = SubResource("CylinderMesh_dr6qw")
+
+[node name="@MeshInstance3D@5" type="MeshInstance3D" parent="." unique_id=1081542695]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 13.7, -5)
+mesh = SubResource("CylinderMesh_j18jj")
+
+[node name="@MeshInstance3D@6" type="MeshInstance3D" parent="." unique_id=923873402]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 6, 5)
+mesh = SubResource("CylinderMesh_3n720")
+
+[node name="@MeshInstance3D@7" type="MeshInstance3D" parent="." unique_id=1604058529]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 13.7, 5)
+mesh = SubResource("CylinderMesh_gc81w")
+
+[node name="@MeshInstance3D@8" type="MeshInstance3D" parent="." unique_id=1432892839]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 6, -5)
+mesh = SubResource("CylinderMesh_swr7o")
+
+[node name="@MeshInstance3D@9" type="MeshInstance3D" parent="." unique_id=888414288]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 13.7, -5)
+mesh = SubResource("CylinderMesh_obrd4")
+
+[node name="@MeshInstance3D@10" type="MeshInstance3D" parent="." unique_id=455121617]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 6, 5)
+mesh = SubResource("CylinderMesh_8fjh5")
+
+[node name="@MeshInstance3D@11" type="MeshInstance3D" parent="." unique_id=2096932292]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 13.7, 5)
+mesh = SubResource("CylinderMesh_nahcv")
+
+[node name="@MeshInstance3D@12" type="MeshInstance3D" parent="." unique_id=282751195]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 35, -12)
+mesh = SubResource("CylinderMesh_exptb")
+
+[node name="@MeshInstance3D@13" type="MeshInstance3D" parent="." unique_id=1289987154]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 72.5, -12)
+mesh = SubResource("CylinderMesh_yixsl")
+
+[node name="@MeshInstance3D@14" type="MeshInstance3D" parent="." unique_id=75315381]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, 8.1)
+mesh = SubResource("BoxMesh_0pm4x")

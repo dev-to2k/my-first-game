@@ -1,0 +1,395 @@
+[gd_scene load_steps=31 format=3]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sky"]
+sky_top_color = Color(0.3, 0.55, 0.9, 1)
+sky_horizon_color = Color(0.78, 0.86, 0.95, 1)
+ground_bottom_color = Color(0.25, 0.3, 0.25, 1)
+ground_horizon_color = Color(0.6, 0.66, 0.58, 1)
+
+[sub_resource type="Sky" id="Sky_sky"]
+sky_material = SubResource("ProceduralSkyMaterial_sky")
+
+[sub_resource type="Environment" id="Environment_env"]
+background_mode = 2
+sky = SubResource("Sky_sky")
+ambient_light_source = 3
+ambient_light_energy = 0.8
+tonemap_mode = 3
+ssao_enabled = true
+glow_enabled = true
+fog_enabled = true
+fog_light_color = Color(0.8, 0.87, 0.95, 1)
+
+[sub_resource type="StandardMaterial3D" id="Mat_grass"]
+albedo_color = Color(0.36, 0.58, 0.3, 1)
+roughness = 0.95
+
+[sub_resource type="BoxMesh" id="Mesh_ground"]
+material = SubResource("Mat_grass")
+size = Vector3(30, 1, 30)
+
+[sub_resource type="StandardMaterial3D" id="Mat_plaza"]
+albedo_color = Color(0.75, 0.73, 0.68, 1)
+roughness = 0.9
+
+[sub_resource type="BoxMesh" id="Mesh_plaza"]
+material = SubResource("Mat_plaza")
+size = Vector3(12, 0.25, 12)
+
+[sub_resource type="StandardMaterial3D" id="Mat_wall"]
+albedo_color = Color(0.62, 0.6, 0.57, 1)
+roughness = 0.9
+
+[sub_resource type="BoxMesh" id="Mesh_wall"]
+material = SubResource("Mat_wall")
+size = Vector3(20, 2, 0.6)
+
+[sub_resource type="StandardMaterial3D" id="Mat_trunk"]
+albedo_color = Color(0.42, 0.28, 0.16, 1)
+roughness = 0.9
+
+[sub_resource type="CylinderMesh" id="Mesh_trunk"]
+material = SubResource("Mat_trunk")
+top_radius = 0.22
+bottom_radius = 0.28
+height = 2.0
+
+[sub_resource type="StandardMaterial3D" id="Mat_leaf"]
+albedo_color = Color(0.25, 0.52, 0.26, 1)
+roughness = 0.9
+
+[sub_resource type="SphereMesh" id="Mesh_leaves"]
+material = SubResource("Mat_leaf")
+radius = 1.3
+height = 2.6
+
+[sub_resource type="StandardMaterial3D" id="Mat_water"]
+albedo_color = Color(0.25, 0.55, 0.75, 1)
+roughness = 0.15
+metallic = 0.3
+
+[sub_resource type="CylinderMesh" id="Mesh_water"]
+material = SubResource("Mat_water")
+top_radius = 1.7
+bottom_radius = 1.7
+height = 0.25
+
+[sub_resource type="CylinderMesh" id="Mesh_fountain"]
+material = SubResource("Mat_wall")
+top_radius = 2.1
+bottom_radius = 2.2
+height = 0.7
+
+[sub_resource type="CylinderMesh" id="Mesh_fountain_pillar"]
+material = SubResource("Mat_wall")
+top_radius = 0.3
+bottom_radius = 0.35
+height = 1.6
+
+[sub_resource type="StandardMaterial3D" id="Mat_pole"]
+albedo_color = Color(0.15, 0.15, 0.17, 1)
+roughness = 0.6
+metallic = 0.4
+
+[sub_resource type="CylinderMesh" id="Mesh_pole"]
+material = SubResource("Mat_pole")
+top_radius = 0.12
+bottom_radius = 0.14
+height = 3.0
+
+[sub_resource type="StandardMaterial3D" id="Mat_bulb"]
+albedo_color = Color(1, 0.85, 0.6, 1)
+emission_enabled = true
+emission = Color(1, 0.75, 0.45, 1)
+emission_energy_multiplier = 3.0
+
+[sub_resource type="SphereMesh" id="Mesh_bulb"]
+material = SubResource("Mat_bulb")
+radius = 0.28
+height = 0.56
+
+[sub_resource type="StandardMaterial3D" id="Mat_crate"]
+albedo_color = Color(0.6, 0.42, 0.24, 1)
+roughness = 0.85
+
+[sub_resource type="BoxMesh" id="Mesh_crate"]
+material = SubResource("Mat_crate")
+size = Vector3(1.2, 1.2, 1.2)
+
+[sub_resource type="StandardMaterial3D" id="Mat_rock"]
+albedo_color = Color(0.5, 0.51, 0.53, 1)
+roughness = 0.95
+
+[sub_resource type="SphereMesh" id="Mesh_rock"]
+material = SubResource("Mat_rock")
+radius = 0.6
+height = 1.2
+
+[sub_resource type="StandardMaterial3D" id="Mat_house"]
+albedo_color = Color(0.9, 0.85, 0.75, 1)
+roughness = 0.9
+
+[sub_resource type="BoxMesh" id="Mesh_house"]
+material = SubResource("Mat_house")
+size = Vector3(4, 3, 4)
+
+[sub_resource type="StandardMaterial3D" id="Mat_roof"]
+albedo_color = Color(0.6, 0.28, 0.18, 1)
+roughness = 0.8
+
+[sub_resource type="BoxMesh" id="Mesh_roof"]
+material = SubResource("Mat_roof")
+size = Vector3(2.9, 0.22, 5.2)
+
+[sub_resource type="BoxShape3D" id="Shape_ground"]
+size = Vector3(30, 1, 30)
+
+[node name="Level01" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_env")
+
+[node name="Sun" type="DirectionalLight3D" parent="."]
+rotation = Vector3(-1.0, -0.6, 0)
+light_color = Color(1, 0.96, 0.9, 1)
+light_energy = 1.2
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+position = Vector3(13, 10, 17)
+rotation = Vector3(-0.44, 0.65, 0)
+fov = 55.0
+current = true
+
+[node name="Ground" type="StaticBody3D" parent="."]
+
+[node name="Mesh" type="MeshInstance3D" parent="Ground"]
+position = Vector3(0, -0.5, 0)
+mesh = SubResource("Mesh_ground")
+
+[node name="Collision" type="CollisionShape3D" parent="Ground"]
+position = Vector3(0, -0.5, 0)
+shape = SubResource("Shape_ground")
+
+[node name="Plaza" type="MeshInstance3D" parent="."]
+position = Vector3(0, 0.125, 0)
+mesh = SubResource("Mesh_plaza")
+
+[node name="Walls" type="Node3D" parent="."]
+
+[node name="WallN" type="MeshInstance3D" parent="Walls"]
+position = Vector3(0, 1, -9.7)
+mesh = SubResource("Mesh_wall")
+
+[node name="WallS" type="MeshInstance3D" parent="Walls"]
+position = Vector3(0, 1, 9.7)
+mesh = SubResource("Mesh_wall")
+
+[node name="WallE" type="MeshInstance3D" parent="Walls"]
+position = Vector3(9.7, 1, 0)
+rotation = Vector3(0, 1.5707964, 0)
+mesh = SubResource("Mesh_wall")
+
+[node name="WallW" type="MeshInstance3D" parent="Walls"]
+position = Vector3(-9.7, 1, 0)
+rotation = Vector3(0, 1.5707964, 0)
+mesh = SubResource("Mesh_wall")
+
+[node name="Fountain" type="Node3D" parent="."]
+
+[node name="Base" type="MeshInstance3D" parent="Fountain"]
+position = Vector3(0, 0.35, 0)
+mesh = SubResource("Mesh_fountain")
+
+[node name="Water" type="MeshInstance3D" parent="Fountain"]
+position = Vector3(0, 0.72, 0)
+mesh = SubResource("Mesh_water")
+
+[node name="Pillar" type="MeshInstance3D" parent="Fountain"]
+position = Vector3(0, 1.5, 0)
+mesh = SubResource("Mesh_fountain_pillar")
+
+[node name="Top" type="MeshInstance3D" parent="Fountain"]
+position = Vector3(0, 2.5, 0)
+mesh = SubResource("Mesh_bulb")
+
+[node name="Trees" type="Node3D" parent="."]
+
+[node name="Tree1" type="Node3D" parent="Trees"]
+position = Vector3(7, 0, -6)
+
+[node name="Trunk" type="MeshInstance3D" parent="Trees/Tree1"]
+position = Vector3(0, 1, 0)
+mesh = SubResource("Mesh_trunk")
+
+[node name="Leaves" type="MeshInstance3D" parent="Trees/Tree1"]
+position = Vector3(0, 3, 0)
+mesh = SubResource("Mesh_leaves")
+
+[node name="Tree2" type="Node3D" parent="Trees"]
+position = Vector3(-7, 0, -6)
+
+[node name="Trunk" type="MeshInstance3D" parent="Trees/Tree2"]
+position = Vector3(0, 1, 0)
+mesh = SubResource("Mesh_trunk")
+
+[node name="Leaves" type="MeshInstance3D" parent="Trees/Tree2"]
+position = Vector3(0, 3.2, 0)
+mesh = SubResource("Mesh_leaves")
+
+[node name="Tree3" type="Node3D" parent="Trees"]
+position = Vector3(7, 0, 6)
+
+[node name="Trunk" type="MeshInstance3D" parent="Trees/Tree3"]
+position = Vector3(0, 1, 0)
+mesh = SubResource("Mesh_trunk")
+
+[node name="Leaves" type="MeshInstance3D" parent="Trees/Tree3"]
+position = Vector3(0, 2.8, 0)
+mesh = SubResource("Mesh_leaves")
+
+[node name="Tree4" type="Node3D" parent="Trees"]
+position = Vector3(-7, 0, 6)
+
+[node name="Trunk" type="MeshInstance3D" parent="Trees/Tree4"]
+position = Vector3(0, 1, 0)
+mesh = SubResource("Mesh_trunk")
+
+[node name="Leaves" type="MeshInstance3D" parent="Trees/Tree4"]
+position = Vector3(0, 3.1, 0)
+mesh = SubResource("Mesh_leaves")
+
+[node name="Bush1" type="MeshInstance3D" parent="."]
+position = Vector3(3.5, 0.5, -4.5)
+scale = Vector3(0.6, 0.6, 0.6)
+mesh = SubResource("Mesh_leaves")
+
+[node name="Bush2" type="MeshInstance3D" parent="."]
+position = Vector3(-3.5, 0.5, 4.5)
+scale = Vector3(0.55, 0.55, 0.55)
+mesh = SubResource("Mesh_leaves")
+
+[node name="House1" type="Node3D" parent="."]
+position = Vector3(-11.5, 0, -3)
+
+[node name="Base" type="MeshInstance3D" parent="House1"]
+position = Vector3(0, 1.5, 0)
+mesh = SubResource("Mesh_house")
+
+[node name="RoofL" type="MeshInstance3D" parent="House1"]
+position = Vector3(-1.15, 3.7, 0)
+rotation = Vector3(0, 0, 0.5)
+mesh = SubResource("Mesh_roof")
+
+[node name="RoofR" type="MeshInstance3D" parent="House1"]
+position = Vector3(1.15, 3.7, 0)
+rotation = Vector3(0, 0, -0.5)
+mesh = SubResource("Mesh_roof")
+
+[node name="House2" type="Node3D" parent="."]
+position = Vector3(11.5, 0, -4)
+rotation = Vector3(0, 1.5707964, 0)
+
+[node name="Base" type="MeshInstance3D" parent="House2"]
+position = Vector3(0, 1.5, 0)
+mesh = SubResource("Mesh_house")
+
+[node name="RoofL" type="MeshInstance3D" parent="House2"]
+position = Vector3(-1.15, 3.7, 0)
+rotation = Vector3(0, 0, 0.5)
+mesh = SubResource("Mesh_roof")
+
+[node name="RoofR" type="MeshInstance3D" parent="House2"]
+position = Vector3(1.15, 3.7, 0)
+rotation = Vector3(0, 0, -0.5)
+mesh = SubResource("Mesh_roof")
+
+[node name="Lamps" type="Node3D" parent="."]
+
+[node name="Lamp1" type="Node3D" parent="Lamps"]
+position = Vector3(5, 0, 5)
+
+[node name="Pole" type="MeshInstance3D" parent="Lamps/Lamp1"]
+position = Vector3(0, 1.5, 0)
+mesh = SubResource("Mesh_pole")
+
+[node name="Bulb" type="MeshInstance3D" parent="Lamps/Lamp1"]
+position = Vector3(0, 3.1, 0)
+mesh = SubResource("Mesh_bulb")
+
+[node name="Light" type="OmniLight3D" parent="Lamps/Lamp1"]
+position = Vector3(0, 3.1, 0)
+light_color = Color(1, 0.8, 0.55, 1)
+light_energy = 1.2
+omni_range = 8.0
+
+[node name="Lamp2" type="Node3D" parent="Lamps"]
+position = Vector3(-5, 0, 5)
+
+[node name="Pole" type="MeshInstance3D" parent="Lamps/Lamp2"]
+position = Vector3(0, 1.5, 0)
+mesh = SubResource("Mesh_pole")
+
+[node name="Bulb" type="MeshInstance3D" parent="Lamps/Lamp2"]
+position = Vector3(0, 3.1, 0)
+mesh = SubResource("Mesh_bulb")
+
+[node name="Light" type="OmniLight3D" parent="Lamps/Lamp2"]
+position = Vector3(0, 3.1, 0)
+light_color = Color(1, 0.8, 0.55, 1)
+light_energy = 1.2
+omni_range = 8.0
+
+[node name="Lamp3" type="Node3D" parent="Lamps"]
+position = Vector3(5, 0, -5)
+
+[node name="Pole" type="MeshInstance3D" parent="Lamps/Lamp3"]
+position = Vector3(0, 1.5, 0)
+mesh = SubResource("Mesh_pole")
+
+[node name="Bulb" type="MeshInstance3D" parent="Lamps/Lamp3"]
+position = Vector3(0, 3.1, 0)
+mesh = SubResource("Mesh_bulb")
+
+[node name="Light" type="OmniLight3D" parent="Lamps/Lamp3"]
+position = Vector3(0, 3.1, 0)
+light_color = Color(1, 0.8, 0.55, 1)
+light_energy = 1.2
+omni_range = 8.0
+
+[node name="Lamp4" type="Node3D" parent="Lamps"]
+position = Vector3(-5, 0, -5)
+
+[node name="Pole" type="MeshInstance3D" parent="Lamps/Lamp4"]
+position = Vector3(0, 1.5, 0)
+mesh = SubResource("Mesh_pole")
+
+[node name="Bulb" type="MeshInstance3D" parent="Lamps/Lamp4"]
+position = Vector3(0, 3.1, 0)
+mesh = SubResource("Mesh_bulb")
+
+[node name="Light" type="OmniLight3D" parent="Lamps/Lamp4"]
+position = Vector3(0, 3.1, 0)
+light_color = Color(1, 0.8, 0.55, 1)
+light_energy = 1.2
+omni_range = 8.0
+
+[node name="Crate1" type="MeshInstance3D" parent="."]
+position = Vector3(2.5, 0.6, 6.5)
+rotation = Vector3(0, 0.4, 0)
+mesh = SubResource("Mesh_crate")
+
+[node name="Crate2" type="MeshInstance3D" parent="."]
+position = Vector3(3.6, 0.6, 6.2)
+rotation = Vector3(0, -0.3, 0)
+mesh = SubResource("Mesh_crate")
+
+[node name="Rock1" type="MeshInstance3D" parent="."]
+position = Vector3(-4, 0.3, -3)
+scale = Vector3(1, 0.6, 1)
+mesh = SubResource("Mesh_rock")
+
+[node name="Rock2" type="MeshInstance3D" parent="."]
+position = Vector3(8.5, 0.25, 1)
+scale = Vector3(0.8, 0.5, 0.8)
+mesh = SubResource("Mesh_rock")

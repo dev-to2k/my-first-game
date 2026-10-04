@@ -1,0 +1,525 @@
+[gd_scene load_steps=29 format=3]
+[sub_resource type="ProceduralSkyMaterial" id="SkyMat"]
+sky_top_color = Color(0.200, 0.450, 0.850, 1.000)
+sky_horizon_color = Color(0.700, 0.850, 0.950, 1.000)
+ground_bottom_color = Color(0.600, 0.700, 0.850, 1.000)
+ground_horizon_color = Color(0.800, 0.880, 0.950, 1.000)
+
+
+[sub_resource type="Sky" id="Sky"]
+sky_material = SubResource("SkyMat")
+
+
+[sub_resource type="Environment" id="Env"]
+background_mode = 2
+sky = SubResource("Sky")
+ambient_light_source = 3
+ambient_light_energy = 0.9
+tonemap_mode = 3
+glow_enabled = true
+fog_enabled = true
+fog_light_color = Color(0.800, 0.880, 0.950, 1.000)
+
+
+[sub_resource type="StandardMaterial3D" id="M_Stone"]
+albedo_color = Color(0.500, 0.500, 0.520, 1.000)
+roughness = 0.85
+
+
+[sub_resource type="StandardMaterial3D" id="M_Dark"]
+albedo_color = Color(0.320, 0.320, 0.360, 1.000)
+roughness = 0.9
+
+
+[sub_resource type="StandardMaterial3D" id="M_Rock"]
+albedo_color = Color(0.400, 0.380, 0.360, 1.000)
+roughness = 0.95
+
+
+[sub_resource type="StandardMaterial3D" id="M_Green"]
+albedo_color = Color(0.350, 0.600, 0.320, 1.000)
+roughness = 0.9
+
+
+[sub_resource type="StandardMaterial3D" id="M_Cloud"]
+albedo_color = Color(0.970, 0.980, 1.000, 1.000)
+roughness = 1.0
+
+
+[sub_resource type="StandardMaterial3D" id="M_Red"]
+albedo_color = Color(0.600, 0.200, 0.140, 1.000)
+roughness = 0.7
+
+
+[sub_resource type="CylinderMesh" id="Mesh_L00"]
+material = SubResource("M_Stone")
+top_radius = 42.80
+bottom_radius = 46.00
+height = 7
+
+
+[sub_resource type="CylinderMesh" id="Mesh_L01"]
+material = SubResource("M_Dark")
+top_radius = 39.60
+bottom_radius = 42.80
+height = 7
+
+
+[sub_resource type="CylinderMesh" id="Mesh_L02"]
+material = SubResource("M_Stone")
+top_radius = 36.40
+bottom_radius = 39.60
+height = 7
+
+
+[sub_resource type="CylinderMesh" id="Mesh_L03"]
+material = SubResource("M_Dark")
+top_radius = 33.20
+bottom_radius = 36.40
+height = 7
+
+
+[sub_resource type="CylinderMesh" id="Mesh_L04"]
+material = SubResource("M_Stone")
+top_radius = 30.00
+bottom_radius = 33.20
+height = 7
+
+
+[sub_resource type="CylinderMesh" id="Mesh_L05"]
+material = SubResource("M_Dark")
+top_radius = 26.80
+bottom_radius = 30.00
+height = 7
+
+
+[sub_resource type="CylinderMesh" id="Mesh_L06"]
+material = SubResource("M_Stone")
+top_radius = 23.60
+bottom_radius = 26.80
+height = 7
+
+
+[sub_resource type="CylinderMesh" id="Mesh_L07"]
+material = SubResource("M_Dark")
+top_radius = 20.40
+bottom_radius = 23.60
+height = 7
+
+
+[sub_resource type="CylinderMesh" id="Mesh_L08"]
+material = SubResource("M_Stone")
+top_radius = 17.20
+bottom_radius = 20.40
+height = 7
+
+
+[sub_resource type="CylinderMesh" id="Mesh_L09"]
+material = SubResource("M_Dark")
+top_radius = 14.00
+bottom_radius = 17.20
+height = 7
+
+
+[sub_resource type="CylinderMesh" id="Mesh_Bottom"]
+material = SubResource("M_Rock")
+top_radius = 46
+bottom_radius = 6
+height = 40
+
+
+[sub_resource type="CylinderMesh" id="Mesh_Rim"]
+material = SubResource("M_Dark")
+top_radius = 58
+bottom_radius = 58
+height = 2.5
+
+
+[sub_resource type="CylinderMesh" id="Mesh_Pillar"]
+material = SubResource("M_Stone")
+top_radius = 1
+bottom_radius = 1.2
+height = 12
+
+
+[sub_resource type="BoxMesh" id="Mesh_Bridge"]
+material = SubResource("M_Dark")
+size = Vector3(60.000, 2.000, 6.000)
+
+
+[sub_resource type="CylinderMesh" id="Mesh_Spire"]
+material = SubResource("M_Dark")
+top_radius = 4
+bottom_radius = 5
+height = 18
+
+
+[sub_resource type="CylinderMesh" id="Mesh_SpireTop"]
+material = SubResource("M_Red")
+top_radius = 0.05
+bottom_radius = 5
+height = 10
+
+
+[sub_resource type="SphereMesh" id="Mesh_Cloud"]
+material = SubResource("M_Cloud")
+radius = 8
+height = 10
+
+
+[sub_resource type="CylinderMesh" id="Mesh_Isle"]
+material = SubResource("M_Green")
+top_radius = 6
+bottom_radius = 6
+height = 2
+
+
+[sub_resource type="CylinderMesh" id="Mesh_IsleBot"]
+material = SubResource("M_Rock")
+top_radius = 6
+bottom_radius = 0.5
+height = 8
+
+[node name="Aincrad" type="Node3D"]
+
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Env")
+
+
+[node name="Sun" type="DirectionalLight3D" parent="."]
+rotation = Vector3(-0.800, -0.500, 0.000)
+light_energy = 1.15
+shadow_enabled = true
+
+
+[node name="Camera3D" type="Camera3D" parent="."]
+position = Vector3(0.000, 25.000, 170.000)
+rotation = Vector3(-0.150, 0.000, 0.000)
+fov = 55
+current = true
+
+
+[node name="Bottom" type="MeshInstance3D" parent="."]
+position = Vector3(0.000, -20.000, 0.000)
+mesh = SubResource("Mesh_Bottom")
+
+
+[node name="Floor01" type="MeshInstance3D" parent="."]
+position = Vector3(0.000, 3.500, 0.000)
+mesh = SubResource("Mesh_L00")
+
+
+[node name="Floor02" type="MeshInstance3D" parent="."]
+position = Vector3(0.000, 10.500, 0.000)
+mesh = SubResource("Mesh_L01")
+
+
+[node name="Floor03" type="MeshInstance3D" parent="."]
+position = Vector3(0.000, 17.500, 0.000)
+mesh = SubResource("Mesh_L02")
+
+
+[node name="Floor04" type="MeshInstance3D" parent="."]
+position = Vector3(0.000, 24.500, 0.000)
+mesh = SubResource("Mesh_L03")
+
+
+[node name="Floor05" type="MeshInstance3D" parent="."]
+position = Vector3(0.000, 31.500, 0.000)
+mesh = SubResource("Mesh_L04")
+
+
+[node name="Floor06" type="MeshInstance3D" parent="."]
+position = Vector3(0.000, 38.500, 0.000)
+mesh = SubResource("Mesh_L05")
+
+
+[node name="Floor07" type="MeshInstance3D" parent="."]
+position = Vector3(0.000, 45.500, 0.000)
+mesh = SubResource("Mesh_L06")
+
+
+[node name="Floor08" type="MeshInstance3D" parent="."]
+position = Vector3(0.000, 52.500, 0.000)
+mesh = SubResource("Mesh_L07")
+
+
+[node name="Floor09" type="MeshInstance3D" parent="."]
+position = Vector3(0.000, 59.500, 0.000)
+mesh = SubResource("Mesh_L08")
+
+
+[node name="Floor10" type="MeshInstance3D" parent="."]
+position = Vector3(0.000, 66.500, 0.000)
+mesh = SubResource("Mesh_L09")
+
+
+[node name="Spire" type="MeshInstance3D" parent="."]
+position = Vector3(0.000, 79.000, 0.000)
+mesh = SubResource("Mesh_Spire")
+
+
+[node name="SpireTop" type="MeshInstance3D" parent="."]
+position = Vector3(0.000, 93.000, 0.000)
+mesh = SubResource("Mesh_SpireTop")
+
+
+[node name="Rim" type="MeshInstance3D" parent="."]
+position = Vector3(0.000, -1.250, 0.000)
+mesh = SubResource("Mesh_Rim")
+
+
+[node name="Pillar00" type="MeshInstance3D" parent="."]
+position = Vector3(52.000, 6.000, 0.000)
+mesh = SubResource("Mesh_Pillar")
+
+
+[node name="Pillar01" type="MeshInstance3D" parent="."]
+position = Vector3(46.850, 6.000, 22.562)
+mesh = SubResource("Mesh_Pillar")
+
+
+[node name="Pillar02" type="MeshInstance3D" parent="."]
+position = Vector3(32.421, 6.000, 40.655)
+mesh = SubResource("Mesh_Pillar")
+
+
+[node name="Pillar03" type="MeshInstance3D" parent="."]
+position = Vector3(11.571, 6.000, 50.696)
+mesh = SubResource("Mesh_Pillar")
+
+
+[node name="Pillar04" type="MeshInstance3D" parent="."]
+position = Vector3(-11.571, 6.000, 50.696)
+mesh = SubResource("Mesh_Pillar")
+
+
+[node name="Pillar05" type="MeshInstance3D" parent="."]
+position = Vector3(-32.421, 6.000, 40.655)
+mesh = SubResource("Mesh_Pillar")
+
+
+[node name="Pillar06" type="MeshInstance3D" parent="."]
+position = Vector3(-46.850, 6.000, 22.562)
+mesh = SubResource("Mesh_Pillar")
+
+
+[node name="Pillar07" type="MeshInstance3D" parent="."]
+position = Vector3(-52.000, 6.000, 0.000)
+mesh = SubResource("Mesh_Pillar")
+
+
+[node name="Pillar08" type="MeshInstance3D" parent="."]
+position = Vector3(-46.850, 6.000, -22.562)
+mesh = SubResource("Mesh_Pillar")
+
+
+[node name="Pillar09" type="MeshInstance3D" parent="."]
+position = Vector3(-32.421, 6.000, -40.655)
+mesh = SubResource("Mesh_Pillar")
+
+
+[node name="Pillar10" type="MeshInstance3D" parent="."]
+position = Vector3(-11.571, 6.000, -50.696)
+mesh = SubResource("Mesh_Pillar")
+
+
+[node name="Pillar11" type="MeshInstance3D" parent="."]
+position = Vector3(11.571, 6.000, -50.696)
+mesh = SubResource("Mesh_Pillar")
+
+
+[node name="Pillar12" type="MeshInstance3D" parent="."]
+position = Vector3(32.421, 6.000, -40.655)
+mesh = SubResource("Mesh_Pillar")
+
+
+[node name="Pillar13" type="MeshInstance3D" parent="."]
+position = Vector3(46.850, 6.000, -22.562)
+mesh = SubResource("Mesh_Pillar")
+
+
+[node name="BridgeL" type="MeshInstance3D" parent="."]
+position = Vector3(-80.000, -1.000, 0.000)
+mesh = SubResource("Mesh_Bridge")
+
+
+[node name="BridgeR" type="MeshInstance3D" parent="."]
+position = Vector3(80.000, -1.000, 0.000)
+mesh = SubResource("Mesh_Bridge")
+
+
+[node name="Cloud00" type="MeshInstance3D" parent="."]
+position = Vector3(73.281, -21.033, -55.491)
+scale = Vector3(1.102, 0.450, 1.698)
+mesh = SubResource("Mesh_Cloud")
+
+
+[node name="Cloud01" type="MeshInstance3D" parent="."]
+position = Vector3(58.500, -8.224, -87.484)
+scale = Vector3(1.354, 0.450, 1.458)
+mesh = SubResource("Mesh_Cloud")
+
+
+[node name="Cloud02" type="MeshInstance3D" parent="."]
+position = Vector3(-90.913, -15.745, -46.915)
+scale = Vector3(1.446, 0.450, 1.330)
+mesh = SubResource("Mesh_Cloud")
+
+
+[node name="Cloud03" type="MeshInstance3D" parent="."]
+position = Vector3(110.917, -15.648, -59.965)
+scale = Vector3(1.271, 0.450, 1.238)
+mesh = SubResource("Mesh_Cloud")
+
+
+[node name="Cloud04" type="MeshInstance3D" parent="."]
+position = Vector3(-6.316, -19.195, 72.243)
+scale = Vector3(1.614, 0.450, 1.457)
+mesh = SubResource("Mesh_Cloud")
+
+
+[node name="Cloud05" type="MeshInstance3D" parent="."]
+position = Vector3(132.520, 5.549, -14.793)
+scale = Vector3(1.715, 0.450, 1.168)
+mesh = SubResource("Mesh_Cloud")
+
+
+[node name="Cloud06" type="MeshInstance3D" parent="."]
+position = Vector3(79.521, 0.937, 37.270)
+scale = Vector3(0.934, 0.450, 0.948)
+mesh = SubResource("Mesh_Cloud")
+
+
+[node name="Cloud07" type="MeshInstance3D" parent="."]
+position = Vector3(-54.425, -1.992, -66.425)
+scale = Vector3(1.380, 0.450, 1.587)
+mesh = SubResource("Mesh_Cloud")
+
+
+[node name="Cloud08" type="MeshInstance3D" parent="."]
+position = Vector3(123.424, -14.491, -32.406)
+scale = Vector3(1.496, 0.450, 1.790)
+mesh = SubResource("Mesh_Cloud")
+
+
+[node name="Cloud09" type="MeshInstance3D" parent="."]
+position = Vector3(83.342, -17.488, 43.962)
+scale = Vector3(1.047, 0.450, 1.209)
+mesh = SubResource("Mesh_Cloud")
+
+
+[node name="Cloud10" type="MeshInstance3D" parent="."]
+position = Vector3(109.585, -2.397, -40.849)
+scale = Vector3(1.705, 0.450, 1.431)
+mesh = SubResource("Mesh_Cloud")
+
+
+[node name="Cloud11" type="MeshInstance3D" parent="."]
+position = Vector3(58.338, 8.459, -94.374)
+scale = Vector3(1.716, 0.450, 1.799)
+mesh = SubResource("Mesh_Cloud")
+
+
+[node name="Cloud12" type="MeshInstance3D" parent="."]
+position = Vector3(96.357, -5.202, -28.321)
+scale = Vector3(1.000, 0.450, 0.809)
+mesh = SubResource("Mesh_Cloud")
+
+
+[node name="Cloud13" type="MeshInstance3D" parent="."]
+position = Vector3(125.618, -6.199, 6.557)
+scale = Vector3(1.292, 0.450, 0.827)
+mesh = SubResource("Mesh_Cloud")
+
+
+[node name="Cloud14" type="MeshInstance3D" parent="."]
+position = Vector3(90.140, -2.980, -18.295)
+scale = Vector3(1.549, 0.450, 1.187)
+mesh = SubResource("Mesh_Cloud")
+
+
+[node name="Cloud15" type="MeshInstance3D" parent="."]
+position = Vector3(83.165, -2.049, 23.411)
+scale = Vector3(1.528, 0.450, 1.732)
+mesh = SubResource("Mesh_Cloud")
+
+
+[node name="Cloud16" type="MeshInstance3D" parent="."]
+position = Vector3(-16.992, -18.191, -70.830)
+scale = Vector3(1.022, 0.450, 1.576)
+mesh = SubResource("Mesh_Cloud")
+
+
+[node name="Cloud17" type="MeshInstance3D" parent="."]
+position = Vector3(73.390, -7.764, 93.397)
+scale = Vector3(0.876, 0.450, 1.186)
+mesh = SubResource("Mesh_Cloud")
+
+
+[node name="Cloud18" type="MeshInstance3D" parent="."]
+position = Vector3(99.902, 13.908, 19.000)
+scale = Vector3(1.485, 0.450, 1.314)
+mesh = SubResource("Mesh_Cloud")
+
+
+[node name="Cloud19" type="MeshInstance3D" parent="."]
+position = Vector3(59.737, -3.746, 120.664)
+scale = Vector3(1.768, 0.450, 0.933)
+mesh = SubResource("Mesh_Cloud")
+
+
+[node name="Cloud20" type="MeshInstance3D" parent="."]
+position = Vector3(82.298, -13.015, -24.413)
+scale = Vector3(1.022, 0.450, 1.409)
+mesh = SubResource("Mesh_Cloud")
+
+
+[node name="Cloud21" type="MeshInstance3D" parent="."]
+position = Vector3(-73.377, -13.607, 2.119)
+scale = Vector3(0.913, 0.450, 1.110)
+mesh = SubResource("Mesh_Cloud")
+
+
+[node name="Cloud22" type="MeshInstance3D" parent="."]
+position = Vector3(32.476, 8.714, 58.830)
+scale = Vector3(0.897, 0.450, 1.027)
+mesh = SubResource("Mesh_Cloud")
+
+
+[node name="Cloud23" type="MeshInstance3D" parent="."]
+position = Vector3(29.851, -1.873, -58.334)
+scale = Vector3(1.220, 0.450, 1.498)
+mesh = SubResource("Mesh_Cloud")
+
+
+[node name="Isle0" type="MeshInstance3D" parent="."]
+position = Vector3(80.000, 10.000, -40.000)
+mesh = SubResource("Mesh_Isle")
+
+
+[node name="IsleB0" type="MeshInstance3D" parent="."]
+position = Vector3(80.000, 5.000, -40.000)
+mesh = SubResource("Mesh_IsleBot")
+
+
+[node name="Isle1" type="MeshInstance3D" parent="."]
+position = Vector3(-90.000, -5.000, 20.000)
+mesh = SubResource("Mesh_Isle")
+
+
+[node name="IsleB1" type="MeshInstance3D" parent="."]
+position = Vector3(-90.000, -10.000, 20.000)
+mesh = SubResource("Mesh_IsleBot")
+
+
+[node name="Isle2" type="MeshInstance3D" parent="."]
+position = Vector3(60.000, -15.000, 70.000)
+mesh = SubResource("Mesh_Isle")
+
+
+[node name="IsleB2" type="MeshInstance3D" parent="."]
+position = Vector3(60.000, -20.000, 70.000)
+mesh = SubResource("Mesh_IsleBot")
+
